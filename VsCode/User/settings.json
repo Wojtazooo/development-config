@@ -1,0 +1,62 @@
+{
+  // Default profile config
+  "[yaml]": {
+    "editor.formatOnPaste": false,
+    "editor.autoIndent": "advanced",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[sql]": {
+    "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "[csharp]": {
+    "editor.defaultFormatter": "ms-dotnettools.csharp"
+  },
+  "window.menuBarVisibility": "compact",
+  "files.autoSave": "afterDelay",
+  "omnisharp.useEditorFormattingSettings": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.formatOnSave": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "explorer.confirmDelete": false,
+  "editor.formatOnPaste": true,
+  "files.autoSaveDelay": 10000,
+  "workbench.activityBar.location": "top",
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "workbench.layoutControl.enabled": false,
+  "workbench.editor.tabSizingFixedMinWidth": 100,
+  "terminal.integrated.fontSize": 12,
+  "editor.mouseWheelZoom": true,
+  "workbench.list.mouseWheelScrollSensitivity": 3,
+  "workbench.statusBar.visible": false,
+  "git.confirmSync": false,
+  "dotnet.server.useOmnisharp": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "workbench.sideBar.location": "right",
+  "editor.minimap.enabled": false,
+  "terminal.integrated.tabs.enabled": false,
+  "workbench.colorTheme": "Visual Studio 2019 Dark",
+  "window.commandCenter": false,
+  "diffEditor.maxComputationTime": 0,
+  "github.copilot.nextEditSuggestions.enabled": true
+}

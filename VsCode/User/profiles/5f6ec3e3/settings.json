@@ -1,0 +1,85 @@
+{
+  // API SPEC profile
+  "window.title": "${activeRepositoryName} - ${profileName} profile",
+  "workbench.iconTheme": "vs-nomo-dark",
+  "workbench.colorCustomizations": {
+    // Background colors
+    "titleBar.activeBackground": "#6a8a5d",
+    "titleBar.inactiveBackground": "#6a8a5d",
+    "activityBar.background": "#6a8a5d",
+    "statusBar.background": "#6a8a5d",
+    // Borders
+    "titleBar.border": "#6a8a5d",
+    "statusBar.border": "#6a8a5d",
+    // Foreground colors
+    "statusBar.foreground": "#ffffff",
+    "titleBar.activeForeground": "#ffffff",
+    "titleBar.inactiveForeground": "#ffffff",
+    "activityBar.foreground": "#ffffff",
+    "activityBar.inactiveForeground": "#ffffff"
+  },
+  "openapi.defaultPreviewRenderer": "redoc",
+  "files.autoSave": "afterDelay",
+  "typelens.exclude": [
+    "*.http"
+  ],
+  "typelens.skiplanguages": [
+    "csharp",
+    "jsonc",
+    "http"
+  ],
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.formatOnSave": true,
+  "playwright.reuseBrowser": false,
+  "playwright.showTrace": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "explorer.confirmDelete": false,
+  "editor.formatOnPaste": true,
+  "files.autoSaveDelay": 10000,
+  "workbench.activityBar.location": "top",
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "window.customTitleBarVisibility": "windowed",
+  "workbench.statusBar.visible": false,
+  "window.menuBarVisibility": "compact",
+  "workbench.layoutControl.enabled": false,
+  "window.newWindowProfile": "Backend",
+  "workbench.editor.tabSizingFixedMinWidth": 100,
+  "workbench.colorTheme": "Monokai Dimmed",
+  "window.commandCenter": false,
+  "workbench.sideBar.location": "right",
+  "editor.minimap.size": "fit",
+  "cSpell.userWords": [
+    "Correlation",
+    "Date",
+    "decommissioned",
+    "Electricity",
+    "Frame",
+    "Fuse",
+    "geographical",
+    "Latitude",
+    "Longitude",
+    "loss",
+    "navigation",
+    "production",
+    "purpose",
+    "ratio",
+    "Remark",
+    "responses",
+    "string",
+    "successfully",
+    "tariff",
+    "true",
+    "wyświetlić"
+  ],
+  "cSpell.language": "pl",
+  "cSpell.enabledNotifications": {
+    "Average Word Length too Long": false
+  },
+  "yaml.validate": false,
+  "[yaml]": {
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": false
+  },
+  "workbench.editor.showTabs": "none",
+  "github.copilot.nextEditSuggestions.enabled": true
+}

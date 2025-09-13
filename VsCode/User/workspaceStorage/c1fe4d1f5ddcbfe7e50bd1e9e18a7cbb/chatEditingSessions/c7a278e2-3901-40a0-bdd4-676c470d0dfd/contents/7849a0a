@@ -1,0 +1,2460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\UmbracoCms.7.2.4\build\UmbracoCms.props" Condition="Exists('..\packages\UmbracoCms.7.2.4\build\UmbracoCms.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F399EAC2-D2E5-40F0-8E78-F18A94E19630}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Webtools.Website</RootNamespace>
+    <AssemblyName>Webtools.Website</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>140f0e16</NuGetPackageImportStamp>
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseGlobalApplicationHostFile />
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.0.0\lib\net40\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.0.0\lib\net40\AutoMapper.Net4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="businesslogic, Version=1.0.5557.19141, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.4\lib\businesslogic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ClientDependency.Core, Version=1.8.3.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ClientDependency.1.8.3.1\lib\net45\ClientDependency.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ClientDependency.Core.Mvc, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ClientDependency-Mvc.1.8.0.0\lib\net45\ClientDependency.Core.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="cms, Version=1.0.5557.19142, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.4\lib\cms.dll</HintPath>
+    </Reference>
+    <Reference Include="controls, Version=1.0.5557.19143, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.4\lib\controls.dll</HintPath>
+    </Reference>
+    <Reference Include="CookComputing.XmlRpcV2">
+      <HintPath>..\packages\xmlrpcnet.2.5.0\lib\net20\CookComputing.XmlRpcV2.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Examine, Version=0.1.60.2941, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Examine.0.1.60.2941\lib\Examine.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageProcessor, Version=1.9.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ImageProcessor.1.9.5.0\lib\ImageProcessor.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageProcessor.Web">
+      <HintPath>..\packages\ImageProcessor.Web.3.3.1.0\lib\net45\ImageProcessor.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="interfaces, Version=1.0.5557.19139, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.4\lib\interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.4\lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net">
+      <HintPath>..\packages\Lucene.Net.2.9.4.1\lib\net40\Lucene.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data, Version=1.0.1559.20655, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.4\lib\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.0.2\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebHelpers.3.2.3\lib\net45\Microsoft.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MiniProfiler">
+      <HintPath>..\packages\MiniProfiler.2.1.0\lib\net40\MiniProfiler.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLCE4Umbraco, Version=1.0.5557.19142, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.4\lib\SQLCE4Umbraco.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.4\lib\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.4\lib\System.Data.SqlServerCe.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="TidyNet, Version=1.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.4\lib\TidyNet.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco, Version=1.0.5557.19144, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.4\lib\umbraco.dll</HintPath>
+    </Reference>
+    <Reference Include="Umbraco.Core, Version=1.0.5557.19139, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.4\lib\Umbraco.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.DataLayer, Version=1.0.5557.19141, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.4\lib\umbraco.DataLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.editorControls, Version=1.0.5557.19145, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.4\lib\umbraco.editorControls.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.MacroEngines, Version=1.0.5557.19146, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.4\lib\umbraco.MacroEngines.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.providers, Version=1.0.5557.19143, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.4\lib\umbraco.providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Umbraco.Web.UI, Version=1.0.5557.19146, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.4\lib\Umbraco.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UmbracoExamine, Version=0.7.0.19142, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.4\lib\UmbracoExamine.dll</HintPath>
+    </Reference>
+    <Reference Include="UrlRewritingNet.UrlRewriter, Version=2.0.60829.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.2.4\lib\UrlRewritingNet.UrlRewriter.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.3.2.3\lib\net45\WebMatrix.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.3.2.3\lib\net45\WebMatrix.WebData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AdminApiHelpConfig.cs" />
+    <Compile Include="App_Start\CompressionHandler.cs" />
+    <Compile Include="App_Start\CorsHandler.cs" />
+    <Compile Include="App_Start\UmbracoEventsRegistration.cs" />
+    <Compile Include="App_Start\WebtoolsHttpControllerSelector.cs" />
+    <Content Include="App_Data\Webtools3Config\initialDatabase.sql" />
+    <Content Include="App_Data\Webtools3Database\013_webtoolsIdentityNemId_Extend.sql" />
+    <Content Include="App_Data\Webtools3Database\012_webtoolsUserToUserInfo.sql" />
+    <Content Include="App_Data\Webtools3Database\011_webtoolsGreenDuel.sql" />
+    <Content Include="App_Data\Webtools3Database\014_webtoolsPackage.sql" />
+    <Content Include="App_Data\Webtools3Database\016_webtoolsJobHistory.sql" />
+    <Content Include="App_Data\Webtools3Database\015_webtoolsGreenDuel2.sql" />
+    <Content Include="App_Data\Webtools3Database\018_webtoolsNotificationConfigurationFeeKey.sql" />
+    <Content Include="App_Data\Webtools3Database\017_webtoolsMultipleItemsOnNotifications.sql" />
+    <Content Include="App_Data\Webtools3Database\017_webtoolsGreenDuelNotifyPlayer.sql" />
+    <Content Include="App_Data\Webtools3Database\018_webtoolsIdentityFacebook.sql" />
+    <Content Include="App_Data\Webtools3Database\019__webtoolsNotificationHourIntervals.sql" />
+    <Content Include="App_Data\Webtools3Database\020_webtoolsOnetimePasswordAndTokens.sql" />
+    <Content Include="App_Data\Webtools3Database\021_Userprofile.sql" />
+    <Content Include="App_Data\Webtools3Database\026_UserResetPasswordToken.sql" />
+    <Content Include="App_Data\Webtools3Database\022_UserIdentityCustomResetPasswordToken.sql" />
+    <Content Include="App_Data\Webtools3Database\025_webtoolsUserIdentityCustom.sql" />
+    <Content Include="App_Data\Webtools3Database\024_webtoolsUserIdentityNemid.sql" />
+    <Content Include="App_Data\Webtools3Database\029_WeatherServiceCache.sql" />
+    <Content Include="App_Data\Webtools3Database\030_AddIndexToWebtoolsIdentityCustomAndNemid.sql" />
+    <Content Include="App_Data\Webtools3Database\031_webtoolsAliasUser.sql" />
+    <Content Include="App_Data\Webtools3Database\028_webtoolsInstallCustomName.sql" />
+    <Content Include="App_Data\Webtools3Database\027_CustomMeterReading.sql" />
+    <Content Include="App_Data\Webtools3Database\20__webtoolsNotificationConfiguration.sql" />
+    <Content Include="App_Data\Webtools3Database\023_UserIdentityCustomChange.sql" />
+    <Content Include="Content\Admin\css\api\bootstrap.css" />
+    <Content Include="Content\Admin\css\api\Site.css" />
+    <Content Include="Content\Admin\css\app.css" />
+    <Content Include="Content\Admin\css\app.min.1.css" />
+    <Content Include="Content\Admin\css\app.min.2.css" />
+    <Content Include="Content\Admin\css\api\ApiHelpPage.css" />
+    <Content Include="Content\Admin\css\api\font-awesome.min.css" />
+    <Content Include="Content\Admin\css\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\Admin\css\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\Admin\css\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\Admin\css\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\Admin\css\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\Admin\css\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\Admin\css\vendor.css" />
+    <Content Include="Content\Admin\css\vendor.min.1.css" />
+    <Content Include="Content\Admin\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Admin\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="Content\Admin\js\bundles\templates.js" />
+    <Content Include="Content\Admin\js\bundles\vendoradmin.js" />
+    <Content Include="Content\Admin\js\bundles\vendoradmin.min.js" />
+    <Content Include="Content\Admin\js\bundles\webtools3app.js" />
+    <Content Include="Content\Admin\js\bundles\webtools3app.min.js" />
+    <Content Include="Content\Admin\js\bundles\webtools3app.ng.js" />
+    <Content Include="Content\Admin\js\controllers\greenduel\GreenDuelInvitationsCtrl.js" />
+    <Content Include="Content\Admin\js\controllers\greenduel\GreenDuelPlayerDetailCtrl.js" />
+    <Content Include="Content\Admin\js\controllers\greenduel\GreenDuelChallengesCtrl.js" />
+    <Content Include="Content\Admin\js\controllers\greenduel\GreenDuelPlayersCtrl.js" />
+    <Content Include="Content\Admin\js\controllers\install\InstallZipCtrl.js" />
+    <Content Include="Content\Admin\js\controllers\log\LogHistoryCtrl.js" />
+    <Content Include="Content\Admin\js\controllers\log\LogLiveCtrl.js" />
+    <Content Include="Content\Admin\js\controllers\log\LogCtrl.js" />
+    <Content Include="Content\Admin\js\controllers\greenduel\GreenDuelCtrl.js" />
+    <Content Include="Content\Admin\js\controllers\greenduel\GreenDuelGameDetailCtrl.js" />
+    <Content Include="Content\Admin\js\controllers\greenduel\GreenDuelGamesCtrl.js" />
+    <Content Include="Content\Admin\js\controllers\greenduel\GreenDuelDashboardCtrl.js" />
+    <Content Include="Content\Admin\js\controllers\HeaderCtrl.js" />
+    <Content Include="Content\Admin\js\controllers\notifications\NotificationListCtrl.js" />
+    <Content Include="Content\Admin\js\controllers\notifications\NotificationDetailCtrl.js" />
+    <Content Include="Content\Admin\js\controllers\notifications\NotificationsCtrl.js" />
+    <Content Include="Content\Admin\js\controllers\sitecontent\SiteContentCtrl.js" />
+    <Content Include="Content\Admin\js\controllers\sitecontent\SiteContentSlideCtrl.js" />
+    <Content Include="Content\Admin\js\controllers\sitecontent\SiteContentSlideshowsCtrl.js" />
+    <Content Include="Content\Admin\js\controllers\userlog\UserLogCtrl.js" />
+    <Content Include="Content\Admin\js\controllers\Webtools3AdminCtrl.js" />
+    <Content Include="Content\Admin\js\services\LogService.js" />
+    <Content Include="Content\Admin\js\services\SiteContentService.js" />
+    <Content Include="Content\Admin\js\services\UserLogService.js" />
+    <Content Include="Content\Admin\js\services\WebClientService.js" />
+    <Content Include="Content\Admin\js\controllers\SidebarCtrl.js" />
+    <Content Include="Content\Admin\js\services\UserService.js" />
+    <Content Include="Content\Admin\js\modules\wt3.js" />
+    <Content Include="Content\Admin\js\services\NotificationService.js" />
+    <Content Include="Content\Admin\js\services\GreenDuelService.js" />
+    <Compile Include="Controllers\Admin\ApiHelp\AdminApiHelpController.cs" />
+    <Compile Include="Controllers\Admin\Benchmark\AdminBenchmarkController.cs" />
+    <Compile Include="Controllers\Admin\Config\Backend\AdminConfigBackendController.cs" />
+    <Compile Include="Controllers\Admin\Config\Database\AdminConfigDatabaseController.cs" />
+    <Compile Include="Controllers\Admin\Config\Hostname\AdminConfigHostnameController.cs" />
+    <Compile Include="Controllers\Admin\Config\WebsiteWebConfig\AdminConfigWebsiteWebConfigController.cs" />
+    <Compile Include="Controllers\Admin\Config\License\AdminConfigLicenseController.cs" />
+    <Compile Include="Controllers\Admin\Config\Smtp\AdminConfigSmtpController.cs" />
+    <Compile Include="Controllers\Admin\Content\AdminContentController.cs" />
+    <Compile Include="Controllers\Admin\Home\AdminHomeController.cs" />
+    <Compile Include="Controllers\Admin\Miscellaneous\AdminMiscellaneousController.cs" />
+    <Compile Include="Controllers\Admin\Jobs\AdminJobsController.cs" />
+    <Compile Include="Controllers\Admin\Miscellaneous\ApplicationState\AdminApplicationStateController.cs" />
+    <Compile Include="Controllers\Admin\Miscellaneous\Token\AdminTokenController.cs" />
+    <Compile Include="Controllers\Admin\Miscellaneous\UserLookup\AdminUserLookupController.cs" />
+    <Compile Include="Controllers\Admin\Miscellaneous\WT2DataImport\AdminWT2DataImportController.cs" />
+    <Compile Include="Controllers\Admin\Notification\EKReportStatImport\AdminNotificationEKReportStatImportController.cs" />
+    <Compile Include="Controllers\Admin\Notification\ErhvervsRapportImport\AdminNotificationErhvervsRapportImportController.cs" />
+    <Compile Include="Controllers\Admin\Notification\WT2MigrationUpdate\AdminNotificationWT2MigrationUpdateController.cs" />
+    <Compile Include="Controllers\Admin\Notification\WT2Migration\AdminNotificationWT2MigrationController.cs" />
+    <Compile Include="Controllers\Admin\Notification\AdminNotificationController.cs" />
+    <Compile Include="Controllers\Admin\Push\AdminPushController.cs" />
+    <Compile Include="Controllers\Admin\Sites\AdminSitesController.cs" />
+    <Compile Include="Controllers\Admin\Template\AdminTemplateController.cs" />
+    <Compile Include="Controllers\Admin\Update\AdminUpdateController.cs" />
+    <Compile Include="Controllers\Admin\User\AdminUserController.cs" />
+    <Compile Include="Controllers\Admin\Config\AdminConfigController.cs" />
+    <Compile Include="Controllers\Admin\Member\AdminMemberController.cs" />
+    <Compile Include="Controllers\Admin\Text\AdminTextController.cs" />
+    <Compile Include="Controllers\Admin\Workflow\AdminWorkflowController.cs" />
+    <Compile Include="Controllers\Admin\Workflow\Items\AdminWorkflowItemsController.cs" />
+    <Compile Include="Controllers\Admin\Workflow\Status\AdminWorkflowStatusController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\ExportController.cs" />
+    <Compile Include="Controllers\MonitorController.cs" />
+    <Compile Include="Controllers\NotificationController.cs" />
+    <Compile Include="Controllers\PageController.cs" />
+    <Compile Include="Controllers\SlideController.cs" />
+    <Compile Include="Controllers\TemplateEasyController.cs" />
+    <Compile Include="Controllers\TemplateController.cs" />
+    <Compile Include="Controllers\TemplateModalController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="App_Data\Webtools3Database\009_webtoolsHourConsumptionConfiguration.sql" />
+    <Content Include="App_Data\Webtools3Database\010_webtoolsNotificationConfigurationHourInterval.sql" />
+    <Content Include="App_Plugins\Webtools3\css\webtools3.css" />
+    <Content Include="Content\Admin\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Admin\fonts\roboto\Roboto-Bold-webfont.svg" />
+    <Content Include="Content\Admin\fonts\roboto\Roboto-Light-webfont.svg" />
+    <Content Include="Content\Admin\fonts\roboto\Roboto-Medium-webfont.svg" />
+    <Content Include="Content\Admin\fonts\roboto\Roboto-Regular-webfont.svg" />
+    <Content Include="Content\Admin\fonts\roboto\Roboto-Thin-webfont.svg" />
+    <Content Include="Content\Admin\fonts\shadowsintolight\shadowsintolight-webfont.svg" />
+    <Content Include="Content\Admin\fonts\weather-icons\weather-icons.svg" />
+    <Content Include="Content\Admin\gruntfile.js" />
+    <Content Include="Content\Admin\js\app.js" />
+    <Content Include="Content\Admin\js\config.js" />
+    <Content Include="Content\Admin\js\controllers\LoginCtrl.js" />
+    <Content Include="Content\Admin\js\controllers\main.js" />
+    <Content Include="Content\Admin\js\controllers\table.js" />
+    <Content Include="Content\Admin\js\controllers\ui-bootstrap.js" />
+    <Content Include="Content\Admin\js\modules\calendar.js" />
+    <Content Include="Content\Admin\js\modules\charts\flot.js" />
+    <Content Include="Content\Admin\js\modules\charts\other-charts.js" />
+    <Content Include="Content\Admin\js\modules\components.js" />
+    <Content Include="Content\Admin\js\modules\form.js" />
+    <Content Include="Content\Admin\js\modules\media.js" />
+    <Content Include="Content\Admin\js\modules\template.js" />
+    <Content Include="Content\Admin\js\modules\ui.js" />
+    <Content Include="Content\Admin\js\services.js" />
+    <Content Include="Content\Admin\media\flashmediaelement.swf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Admin\template\carousel\carousel.html" />
+    <Content Include="Content\Admin\template\chat.html" />
+    <Content Include="Content\Admin\template\datepicker\day.html" />
+    <Content Include="Content\Admin\template\datepicker\month.html" />
+    <Content Include="Content\Admin\template\datepicker\popup.html" />
+    <Content Include="Content\Admin\template\datepicker\year.html" />
+    <Content Include="Content\Admin\template\footer.html" />
+    <Content Include="Content\Admin\template\header.html" />
+    <Content Include="Content\Admin\template\pagination\pager.html" />
+    <Content Include="Content\Admin\template\pagination\pagination.html" />
+    <Content Include="Content\Admin\template\profile-menu.html" />
+    <Content Include="Content\Admin\template\sidebar-left.html" />
+    <Content Include="Content\Admin\template\tabs\tabset.html" />
+    <Content Include="Content\Admin\vendors\angular-animate.min.js" />
+    <Content Include="Content\Admin\vendors\angular-cookies.min.js" />
+    <Content Include="Content\Admin\vendors\angular-locale_da-dk.js" />
+    <Content Include="Content\Admin\vendors\angular-resource.min.js" />
+    <Content Include="Content\Admin\vendors\angular-sanitize.min.js" />
+    <Content Include="Content\Admin\vendors\angular-summernote.min.js" />
+    <Content Include="Content\Admin\vendors\angular-ui-router.min.js" />
+    <Content Include="Content\Admin\vendors\angular.min.js" />
+    <Content Include="Content\Admin\vendors\animate.min.css" />
+    <Content Include="Content\Admin\vendors\bootstrap-growl\bootstrap-growl.js" />
+    <Content Include="Content\Admin\vendors\bootstrap-growl\bootstrap-growl.min.js" />
+    <Content Include="Content\Admin\vendors\bootstrap.min.js" />
+    <Content Include="Content\Admin\vendors\curvedLines.js" />
+    <Content Include="Content\Admin\vendors\farbtastic\farbtastic.css" />
+    <Content Include="Content\Admin\vendors\farbtastic\farbtastic.js" />
+    <Content Include="Content\Admin\vendors\farbtastic\farbtastic.min.js" />
+    <Content Include="Content\Admin\vendors\farbtastic\marker.png" />
+    <Content Include="Content\Admin\vendors\farbtastic\mask.png" />
+    <Content Include="Content\Admin\vendors\farbtastic\wheel.png" />
+    <Content Include="Content\Admin\vendors\fileinput\fileinput.js" />
+    <Content Include="Content\Admin\vendors\fileinput\fileinput.min.js" />
+    <Content Include="Content\Admin\vendors\fullcalendar.min.css" />
+    <Content Include="Content\Admin\vendors\fullcalendar.min.js" />
+    <Content Include="Content\Admin\vendors\input-mask\input-mask.js" />
+    <Content Include="Content\Admin\vendors\input-mask\input-mask.min.js" />
+    <Content Include="Content\Admin\vendors\jquery-ui.min.css" />
+    <Content Include="Content\Admin\vendors\jquery-ui.min.js" />
+    <Content Include="Content\Admin\vendors\jquery-ui.theme.min.css" />
+    <Content Include="Content\Admin\vendors\jquery.easypiechart.min.js" />
+    <Content Include="Content\Admin\vendors\jquery.flot.js" />
+    <Content Include="Content\Admin\vendors\jquery.flot.orderBars.js" />
+    <Content Include="Content\Admin\vendors\jquery.flot.pie.js" />
+    <Content Include="Content\Admin\vendors\jquery.flot.resize.js" />
+    <Content Include="Content\Admin\vendors\jquery.flot.tooltip.min.js" />
+    <Content Include="Content\Admin\vendors\jquery.mCustomScrollbar.concat.min.js" />
+    <Content Include="Content\Admin\vendors\jquery.mCustomScrollbar.min.css" />
+    <Content Include="Content\Admin\vendors\jquery.min.js" />
+    <Content Include="Content\Admin\vendors\jquery.signalR.min.js" />
+    <Content Include="Content\Admin\vendors\jquery.simpleWeather.min.js" />
+    <Content Include="Content\Admin\vendors\loading-bar.css" />
+    <Content Include="Content\Admin\vendors\loading-bar.js" />
+    <Content Include="Content\Admin\vendors\material-design-iconic-font.min.css" />
+    <Content Include="Content\Admin\vendors\moment.min.js" />
+    <Content Include="Content\Admin\vendors\ng-file-upload-all.js" />
+    <Content Include="Content\Admin\vendors\ng-table.min.js" />
+    <Content Include="Content\Admin\vendors\nouislider.min.js" />
+    <Content Include="Content\Admin\vendors\ocLazyLoad.min.js" />
+    <Content Include="Content\Admin\vendors\sparklines\jquery.sparkline.js" />
+    <Content Include="Content\Admin\vendors\sparklines\jquery.sparkline.min.js" />
+    <Content Include="Content\Admin\vendors\summernote.css" />
+    <Content Include="Content\Admin\vendors\summernote.min.js" />
+    <Content Include="Content\Admin\vendors\sweet-alert.css" />
+    <Content Include="Content\Admin\vendors\sweet-alert.js" />
+    <Content Include="Content\Admin\vendors\ui-bootstrap-tpls.min.js" />
+    <Content Include="Content\Admin\vendors\ui-bootstrap.min.js" />
+    <Content Include="Content\Admin\vendors\underscore-min.js" />
+    <Content Include="Content\Admin\vendors\waves.min.js" />
+    <Content Include="Content\boxes.css" />
+    <Content Include="Content\Fonts\ekicons.svg" />
+    <Content Include="Content\Fonts\fontello.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\icofont.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\titilliumweb-bold-webfont.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\titilliumweb-italic-webfont.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\titilliumweb-regular-webfont.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\titilliumweb-semibold-webfont.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Less\slide-hourlyConsumption.css">
+      <DependentUpon>slide-hourlyConsumption.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Less\slide-hourlyConsumption.min.css">
+      <DependentUpon>slide-hourlyConsumption.css</DependentUpon>
+    </Content>
+    <Content Include="Images\bg01.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\bg\Blurrygreen.jpg" />
+    <Content Include="Images\bg\Icon_Smiley_happy.PNG" />
+    <Content Include="Images\bg\Icon_Smiley_sad.PNG" />
+    <Content Include="Images\bg\smileyneutral112.png" />
+    <Content Include="Images\bg\smileyneutral28.png" />
+    <Content Include="Images\bg\smileyneutral56.png" />
+    <Content Include="Images\icons\Dark\sewer.png" />
+    <Content Include="Images\icons\Light\sewer.png" />
+    <Content Include="Images\icons\White\Icon_el_light.png" />
+    <Content Include="Images\icons\White\Icon_heat_light.png" />
+    <Content Include="Images\icons\White\Icon_water_light.png" />
+    <Content Include="Images\icons\White\sewer.png" />
+    <Content Include="Images\logo-kmd.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\icons\Dark\checked.png" />
+    <Content Include="Images\icons\Dark\unchecked.png" />
+    <Content Include="Images\nemid\bgButton.png" />
+    <Content Include="Images\nemid\logoNemID.png" />
+    <Content Include="Images\nemid\nemidLogin.png" />
+    <Content Include="Images\nemid\nemidSignatur.png" />
+    <Content Include="Images\nemid\noeglefil-tab.png" />
+    <Content Include="Images\nemid\otp-tab.png" />
+    <Content Include="Images\nemid\tabHover.png" />
+    <Content Include="Images\nemid\tabHoverLeft.png" />
+    <Content Include="Images\nemid\tabHoverRight.png" />
+    <Content Include="Images\nemid\tabLeft.png" />
+    <Content Include="Images\nemid\tabmenu.png" />
+    <Content Include="Images\nemid\tabNemID.png" />
+    <Content Include="Images\nemid\tabNemIDSelected.png" />
+    <Content Include="Images\nemid\tabRight.png" />
+    <Content Include="Images\nemid\tabSelectedLeft.png" />
+    <Content Include="Images\nemid\tabSelectedRight.png" />
+    <Content Include="Images\slides\weatherv2\Icon_weather_Cloud.png" />
+    <Content Include="Images\slides\weatherv2\Icon_weather_Rain.png" />
+    <Content Include="Images\slides\weatherv2\Icon_weather_Snow.png" />
+    <Content Include="Images\slides\weatherv2\Icon_weather_Sun.png" />
+    <Content Include="Images\slides\weatherv2\regn1.mp4" />
+    <Content Include="Images\slides\weatherv2\regn1.png" />
+    <Content Include="Images\slides\weatherv2\regn2.mp4" />
+    <Content Include="Images\slides\weatherv2\regn2.png" />
+    <Content Include="Images\slides\weatherv2\sky1.mp4" />
+    <Content Include="Images\slides\weatherv2\sky1.png" />
+    <Content Include="Images\slides\weatherv2\sky2.mp4" />
+    <Content Include="Images\slides\weatherv2\sky2.png" />
+    <Content Include="Images\slides\weatherv2\sne1.mp4" />
+    <Content Include="Images\slides\weatherv2\sne1.png" />
+    <Content Include="Images\slides\weatherv2\sne2.mp4" />
+    <Content Include="Images\slides\weatherv2\sne2.png" />
+    <Content Include="Images\slides\weatherv2\sol1.mp4" />
+    <Content Include="Images\slides\weatherv2\sol1.png" />
+    <Content Include="Images\slides\weatherv2\sol2.mp4" />
+    <Content Include="Images\slides\weatherv2\sol2.png" />
+    <Content Include="Scripts\Admin\Controllers\Config\Webtools3ConfigWebsiteWebConfigController.js" />
+    <Content Include="Scripts\Admin\Controllers\Miscellaneous\Webtools3CalcNettoController.js" />
+    <Content Include="Scripts\Admin\Controllers\Miscellaneous\Webtools3TokenController.js" />
+    <Content Include="Scripts\Admin\Controllers\Miscellaneous\Webtools3UserLookupController.js" />
+    <Content Include="Scripts\Admin\Controllers\Miscellaneous\Webtools3WT2ContactInfoImportController.js" />
+    <Content Include="Scripts\Admin\Controllers\Miscellaneous\Webtools3WT2LogbogImportController.js" />
+    <Content Include="Scripts\Admin\Controllers\Notification\Webtools3NotificationErhvervsRapportImportController.js" />
+    <Content Include="Scripts\Admin\Controllers\Notification\Webtools3NotificationWT2MigrationUpdateController.js" />
+    <Content Include="Scripts\Admin\Services\Miscellaneous\calcNettoService.js" />
+    <Content Include="Scripts\Admin\Services\Miscellaneous\wt2ContactInfoService.js" />
+    <Content Include="Scripts\Admin\Services\Miscellaneous\wt2LogbogService.js" />
+    <Content Include="Scripts\Admin\Services\Notification\wt2ErhvervsRapportImportService.js" />
+    <Content Include="Scripts\Admin\Services\Notification\wt2MigrationUpdateService.js" />
+    <Content Include="Scripts\Angular\items\item.directives.js" />
+    <Content Include="Scripts\Angular\items\item.services.js" />
+    <Content Include="Scripts\Angular\text\text.directives.js" />
+    <Content Include="Scripts\Angular\webtools.angular.app.js" />
+    <Content Include="Scripts\Angular\webtools.angular.controllers.js" />
+    <Content Include="Scripts\Modals\webtools.modals.filterEdit.js" />
+    <Content Include="Scripts\Sdk\webtools.sdk.post.js" />
+    <Content Include="Scripts\Sdk\webtools.sdk.pre.js" />
+    <Content Include="Scripts\ApiHelp\bootstrap.js" />
+    <Content Include="Scripts\ApiHelp\jquery-2.1.1.js" />
+    <Content Include="Scripts\ApiHelp\modernizr-2.7.2.js" />
+    <Content Include="Scripts\ApiHelp\respond.js" />
+    <Content Include="Scripts\ApiHelp\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\Modals\webtools.modals.hourConsumptionEditIntervals.js" />
+    <Content Include="Scripts\Modals\webtools.modals.unitPriceEdit.js" />
+    <Content Include="Scripts\Sites\webtools.all.min.js">
+      <DependentUpon>webtools.all.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Sites\webtools.all.haderslev.js" />
+    <Content Include="Scripts\Sites\webtools.all.min.js" />
+    <Content Include="Scripts\Sites\webtools.angular.app.js" />
+    <Content Include="Scripts\Sites\webtools.angular.app.min.js">
+      <DependentUpon>webtools.angular.app.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Sites\webtools.sdk.js" />
+    <Content Include="Scripts\Sites\webtools.sdk.min.js">
+      <DependentUpon>webtools.sdk.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Slides\webtools.slides.benchmarkMultiple.js" />
+    <Content Include="Scripts\Slides\webtools.slides.economy.js" />
+    <Content Include="Scripts\Slides\webtools.slides.weatherv2.js" />
+    <Content Include="Scripts\Slides\webtools.slides.hourlyConsumption.js" />
+    <Content Include="Scripts\Vendor\c3-0.4.11.js" />
+    <Content Include="Scripts\Vendor\chart.js" />
+    <Content Include="Scripts\Vendor\chart.min-2.8.0.js" />
+    <Content Include="Scripts\Vendor\chartjs-plugin-annotation.js" />
+    <Content Include="Scripts\Vendor\chartjs-plugin-annotation.min.js" />
+    <Content Include="Scripts\Vendor\chartjs-plugin-labels.min.js" />
+    <Content Include="Content\Less\hourconsumption.less" />
+    <Content Include="Scripts\Admin\Controllers\Notification\ekReportStatImportController.js" />
+    <Content Include="Scripts\Admin\Services\Notification\ekReportStatImportService.js" />
+    <Content Include="Scripts\Vendor\d3-3.5.17.js" />
+    <Content Include="Scripts\Vendor\d3-3.5.17.min.js" />
+    <Content Include="Scripts\Vendor\d3-4.2.2.js" />
+    <Content Include="Scripts\Vendor\fitty.min.js" />
+    <Content Include="Scripts\Vendor\knockout-3.4.0.js" />
+    <Content Include="Scripts\Vendor\knockout.mapping-2.4.1.js" />
+    <Content Include="Scripts\Vendor\knockout.validation.js" />
+    <Content Include="Scripts\webtools.external.js" />
+    <Content Include="Scripts\webtools.knockout.form2.js" />
+    <Content Include="Scripts\webtools.postal.js" />
+    <Content Include="Scripts\webtools.cookie.js" />
+    <Content Include="Scripts\webtools.sidebar.js" />
+    <Content Include="Scripts\webtools.state.current.js" />
+    <Content Include="Scripts\webtools.tools.base64.js" />
+    <Content Include="Scripts\webtools.tools.period.js" />
+    <Content Include="Scripts\webtools.tools.ko.js" />
+    <Content Include="Scripts\webtools.ui.js" />
+    <Content Include="Scripts\webtools.knockout.form.js" />
+    <Content Include="Scripts\webtools.knockout.grid.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.addressinfolist.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.benchmarkHofor.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.consumptionexportview.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.consumptionExportViewx.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.entermail.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.aliasresetpassword.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.customerInformationText.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.invoices2.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.invoicesNRGi.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.login3.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.map.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.masterdata2.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.overviewDistrictHeatingWithoutEconomy.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.resetpassword.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.companydata.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.consumptionviewhofor.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.consumptionview.js" />
+    <Content Include="Scripts\WidgetsEasy\webtools.widgets.easy.masterdata.js" />
+    <Content Include="Scripts\WidgetsEasy\webtools.widgets.easy.movingform.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.itemsContainer.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.languagepickersidebar.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.login2.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.temperaturemonitor.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.textlogbook.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.items.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.changeuser.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.useraddtoken.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.addressinfo.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.userpicker.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.weekconsumption.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets_graph.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets_guide.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets_addressitemchooser.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets_multipleitemchooser.js" />
+    <Content Include="Views\Admin\Config\WebsiteWebConfig.cshtml" />
+    <Content Include="Views\Admin\Notification\EKReportStatImport\Index.cshtml" />
+    <Content Include="Content\Less\modal-hourConsumptionEditIntervals.less" />
+    <Content Include="Content\Admin\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="Content\Admin\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="Content\Admin\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="Content\Admin\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="Views\Admin\Template\GreenDuel.cshtml" />
+    <Content Include="Views\Admin\Template\GreenDuelDashboard.cshtml" />
+    <Content Include="Views\Admin\Template\GreenDuelPlayers.cshtml" />
+    <Content Include="Views\Admin\Template\GreenDuelGames.cshtml" />
+    <Content Include="Views\Admin\Template\Common.cshtml" />
+    <Content Include="Views\Admin\Template\GreenDuelGameDetail.cshtml" />
+    <Content Include="Views\Admin\Template\Log.cshtml" />
+    <Content Include="Views\Admin\Template\Home.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\EnergiFyn\Css\header.cshtml" />
+    <Content Include="Content\Less\weekconsumption.less" />
+    <Content Include="Views\Admin\Push\Send.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\EnergiFyn\energifyn_report_sms.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\EnergiFyn\Shared\header.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\EnergiFyn\Shared\footer.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\EnergiFyn\energifyn_alarm_email.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\EnergiFyn\energifyn_alarm_sms.cshtml" />
+    <Content Include="Views\Admin\Miscellaneous\WT2DataImport\Logbog.cshtml" />
+    <Content Include="Views\Admin\Miscellaneous\WT2DataImport\ContactInfo.cshtml" />
+    <Content Include="Views\Admin\Miscellaneous\CalcNetto.cshtml" />
+    <Content Include="Content\Less\grid.less" />
+    <Content Include="Content\Less\form.less" />
+    <Content Include="Content\Admin\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Admin\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\Admin\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\Admin\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\Admin\fonts\roboto\Roboto-Bold-webfont.eot" />
+    <Content Include="Content\Admin\fonts\roboto\Roboto-Bold-webfont.ttf" />
+    <Content Include="Content\Admin\fonts\roboto\Roboto-Bold-webfont.woff" />
+    <Content Include="Content\Admin\fonts\roboto\Roboto-Light-webfont.eot" />
+    <Content Include="Content\Admin\fonts\roboto\Roboto-Light-webfont.ttf" />
+    <Content Include="Content\Admin\fonts\roboto\Roboto-Light-webfont.woff" />
+    <Content Include="Content\Admin\fonts\roboto\Roboto-Medium-webfont.eot" />
+    <Content Include="Content\Admin\fonts\roboto\Roboto-Medium-webfont.ttf" />
+    <Content Include="Content\Admin\fonts\roboto\Roboto-Medium-webfont.woff" />
+    <Content Include="Content\Admin\fonts\roboto\Roboto-Regular-webfont.eot" />
+    <Content Include="Content\Admin\fonts\roboto\Roboto-Regular-webfont.ttf" />
+    <Content Include="Content\Admin\fonts\roboto\Roboto-Regular-webfont.woff" />
+    <Content Include="Content\Admin\fonts\roboto\Roboto-Thin-webfont.eot" />
+    <Content Include="Content\Admin\fonts\roboto\Roboto-Thin-webfont.ttf" />
+    <Content Include="Content\Admin\fonts\roboto\Roboto-Thin-webfont.woff" />
+    <Content Include="Content\Admin\fonts\shadowsintolight\shadowsintolight-webfont.eot" />
+    <Content Include="Content\Admin\fonts\shadowsintolight\shadowsintolight-webfont.ttf" />
+    <Content Include="Content\Admin\fonts\shadowsintolight\shadowsintolight-webfont.woff" />
+    <Content Include="Content\Admin\fonts\shadowsintolight\shadowsintolight-webfont.woff2" />
+    <Content Include="Content\Admin\fonts\weather-icons\weather-icons.eot" />
+    <Content Include="Content\Admin\fonts\weather-icons\weather-icons.ttf" />
+    <Content Include="Content\Admin\fonts\weather-icons\weather-icons.woff" />
+    <Content Include="Content\Admin\less\app.less" />
+    <Content Include="Content\Admin\less\inc\404.less" />
+    <Content Include="Content\Admin\less\inc\alert.less" />
+    <Content Include="Content\Admin\less\inc\base.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\alerts.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\badges.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\bootstrap.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\breadcrumbs.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\button-groups.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\buttons.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\carousel.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\close.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\code.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\component-animations.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\dropdowns.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\forms.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\glyphicons.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\grid.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\input-groups.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\jumbotron.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\labels.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\list-group.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\media.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\mixins.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\mixins\alerts.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\mixins\background-variant.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\mixins\border-radius.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\mixins\buttons.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\mixins\center-block.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\mixins\clearfix.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\mixins\forms.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\mixins\gradients.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\mixins\grid-framework.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\mixins\grid.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\mixins\hide-text.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\mixins\image.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\mixins\labels.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\mixins\list-group.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\mixins\nav-divider.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\mixins\nav-vertical-align.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\mixins\opacity.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\mixins\pagination.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\mixins\panels.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\mixins\progress-bar.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\mixins\reset-filter.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\mixins\resize.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\mixins\responsive-visibility.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\mixins\size.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\mixins\tab-focus.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\mixins\table-row.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\mixins\text-emphasis.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\mixins\text-overflow.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\mixins\vendor-prefixes.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\modals.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\navbar.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\navs.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\normalize.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\pager.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\pagination.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\panels.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\popovers.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\print.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\progress-bars.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\responsive-embed.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\responsive-utilities.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\scaffolding.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\tables.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\theme.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\thumbnails.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\tooltip.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\type.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\utilities.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\variables.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-master\wells.less" />
+    <Content Include="Content\Admin\less\inc\bootstrap-overrides.less" />
+    <Content Include="Content\Admin\less\inc\breadcrumb.less" />
+    <Content Include="Content\Admin\less\inc\button.less" />
+    <Content Include="Content\Admin\less\inc\card.less" />
+    <Content Include="Content\Admin\less\inc\chart.less" />
+    <Content Include="Content\Admin\less\inc\chat.less" />
+    <Content Include="Content\Admin\less\inc\contacts.less" />
+    <Content Include="Content\Admin\less\inc\dropdown.less" />
+    <Content Include="Content\Admin\less\inc\font.less" />
+    <Content Include="Content\Admin\less\inc\footer.less" />
+    <Content Include="Content\Admin\less\inc\form.less" />
+    <Content Include="Content\Admin\less\inc\generics.less" />
+    <Content Include="Content\Admin\less\inc\header.less" />
+    <Content Include="Content\Admin\less\inc\ie-warning.less" />
+    <Content Include="Content\Admin\less\inc\invoice.less" />
+    <Content Include="Content\Admin\less\inc\less-plugins\for.less" />
+    <Content Include="Content\Admin\less\inc\list.less" />
+    <Content Include="Content\Admin\less\inc\listview.less" />
+    <Content Include="Content\Admin\less\inc\load.less" />
+    <Content Include="Content\Admin\less\inc\login.less" />
+    <Content Include="Content\Admin\less\inc\media.less" />
+    <Content Include="Content\Admin\less\inc\messages.less" />
+    <Content Include="Content\Admin\less\inc\misc.less" />
+    <Content Include="Content\Admin\less\inc\mixin.less" />
+    <Content Include="Content\Admin\less\inc\modal.less" />
+    <Content Include="Content\Admin\less\inc\pagination.less" />
+    <Content Include="Content\Admin\less\inc\panel.less" />
+    <Content Include="Content\Admin\less\inc\photos.less" />
+    <Content Include="Content\Admin\less\inc\popover.less" />
+    <Content Include="Content\Admin\less\inc\preloader.less" />
+    <Content Include="Content\Admin\less\inc\pricing-table.less" />
+    <Content Include="Content\Admin\less\inc\print.less" />
+    <Content Include="Content\Admin\less\inc\profile.less" />
+    <Content Include="Content\Admin\less\inc\progress-bar.less" />
+    <Content Include="Content\Admin\less\inc\shadow.less" />
+    <Content Include="Content\Admin\less\inc\sidebar.less" />
+    <Content Include="Content\Admin\less\inc\skin.less" />
+    <Content Include="Content\Admin\less\inc\table.less" />
+    <Content Include="Content\Admin\less\inc\tabs.less" />
+    <Content Include="Content\Admin\less\inc\todo.less" />
+    <Content Include="Content\Admin\less\inc\tooltip.less" />
+    <Content Include="Content\Admin\less\inc\variables.less" />
+    <Content Include="Content\Admin\less\inc\vendor-overrides\bootstrap-datetimepicker.less" />
+    <Content Include="Content\Admin\less\inc\vendor-overrides\chosen.less" />
+    <Content Include="Content\Admin\less\inc\vendor-overrides\farbtastic.less" />
+    <Content Include="Content\Admin\less\inc\vendor-overrides\fileinput.less" />
+    <Content Include="Content\Admin\less\inc\vendor-overrides\fullcalendar.less" />
+    <Content Include="Content\Admin\less\inc\vendor-overrides\light-gallery.less" />
+    <Content Include="Content\Admin\less\inc\vendor-overrides\malihu-custom-scrollbar.less" />
+    <Content Include="Content\Admin\less\inc\vendor-overrides\mediaelement.less" />
+    <Content Include="Content\Admin\less\inc\vendor-overrides\ng-table.less" />
+    <Content Include="Content\Admin\less\inc\vendor-overrides\noUiSlider.less" />
+    <Content Include="Content\Admin\less\inc\vendor-overrides\summernote.less" />
+    <Content Include="Content\Admin\less\inc\vendor-overrides\sweetalert.less" />
+    <Content Include="Content\Admin\less\inc\vendor-overrides\ui-bootstrap.less" />
+    <Content Include="Content\Admin\less\inc\vendor-overrides\waves.less" />
+    <Content Include="Content\Admin\less\inc\wall.less" />
+    <Content Include="Content\Admin\less\inc\widgets.less" />
+    <Content Include="Content\Admin\less\inc\wizard.less" />
+    <Content Include="Content\Admin\media\mediaelement.srt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Admin\package.json" />
+    <Content Include="Content\Admin\vendors\bower.json" />
+    <Content Include="Content\Admin\vendors\fileinput\fileinput.less" />
+    <Content Include="Content\Admin\vendors\weather-icons\weather-font.less" />
+    <Content Include="Content\Admin\vendors\weather-icons\weather-icons.less" />
+    <Content Include="Views\Admin\Shared\_LayoutAdminLogin.cshtml" />
+    <Content Include="Views\Admin\Home\Index.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\FjernvarmeFyn\Css\header.cshtml" />
+    <Content Include="App_Data\Webtools3Database\001_pushTables.sql" />
+    <Content Include="App_Data\Webtools3Database\002_alarmDeviationReferenceValue.sql" />
+    <Content Include="App_Data\Webtools3Database\003_webtoolsItemCustomMeterReadingCascade.sql" />
+    <Content Include="App_Data\Webtools3Database\004_webtoolsBudgetSerieValue.sql" />
+    <Content Include="App_Data\Webtools3Database\008_webtoolsCustomData_Size2.sql" />
+    <Content Include="App_Data\Webtools3Database\005_webtoolsCustomData_Size.sql" />
+    <Content Include="App_Data\Webtools3Database\006_webtoolsBudgetSerieValue_UserBudget.sql" />
+    <Content Include="App_Data\Webtools3Database\007_webtoolsProcessedLogin_Context.sql" />
+    <Content Include="config\grid.editors.config.js" />
+    <Content Include="Content\weather-icons.css" />
+    <Content Include="default.aspx" />
+    <Content Include="Images\content\Diehl_metering.jpg" />
+    <Content Include="Scripts\Admin\Controllers\Config\Webtools3ConfigBackendController.js" />
+    <Content Include="Scripts\Admin\Controllers\Config\Webtools3ConfigHostnameController.js" />
+    <Content Include="Scripts\Admin\Controllers\Config\Webtools3ConfigSmtpController.js" />
+    <Content Include="Scripts\Admin\Controllers\Config\Webtools3ConfigWebsiteWebConfigController.js" />
+    <Content Include="Scripts\Admin\Controllers\Config\Webtools3ConfigLicenseController.js" />
+    <Content Include="Scripts\Admin\Controllers\Content\Webtools3ContentController.js" />
+    <Content Include="Scripts\Admin\Controllers\Miscellaneous\Webtools3WT2CustomDataImportController.js" />
+    <Content Include="Scripts\Admin\Controllers\Notification\Webtools3NotificationWT2MigrationController.js" />
+    <Content Include="Scripts\Admin\Controllers\Text\Webtools3TextImportController.js" />
+    <Content Include="Scripts\Admin\Controllers\Update\Webtools3UpdateController.js" />
+    <Content Include="Scripts\Admin\Services\Config\configBackendService.js" />
+    <Content Include="Scripts\Admin\Services\Config\configService.js" />
+    <Content Include="Scripts\Admin\Controllers\Config\Webtools3ConfigController.js" />
+    <Content Include="Scripts\Admin\Services\Config\configHostnameService.js" />
+    <Content Include="Scripts\Admin\Services\Config\configWebsiteWebConfigService.js" />
+    <Content Include="Scripts\Admin\Services\Config\configSmtpService.js" />
+    <Content Include="Scripts\Admin\Services\Config\configLicenseKeyService.js" />
+    <Content Include="Scripts\Admin\Services\Content\contentService.js" />
+    <Content Include="Scripts\Admin\Services\httpService.js" />
+    <Content Include="Scripts\Admin\Services\jobService.js" />
+    <Content Include="Scripts\Admin\Helpers\angularHelper.js" />
+    <Content Include="Scripts\Admin\Controllers\Webtools3DialogController.js" />
+    <Content Include="Scripts\Admin\Controllers\Config\Webtools3ConfigDatabaseController.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="App_Plugins\FontAwesomeIconPicker\fontawesomeiconpicker.controller.js" />
+    <Content Include="App_Plugins\FontAwesomeIconPicker\fontawesomeiconpicker.css" />
+    <Content Include="App_Plugins\FontAwesomeIconPicker\fontawesomeiconpicker.html" />
+    <Content Include="App_Plugins\FontAwesomeIconPicker\vendor\fontawesome\fontawesome-webfont.svg" />
+    <Content Include="App_Plugins\FontAwesomeIconPicker\vendor\fontawesome\fontawesome.min.css" />
+    <Content Include="App_Plugins\FontAwesomeIconPicker\vendor\select2\select2-spinner.gif" />
+    <Content Include="App_Plugins\FontAwesomeIconPicker\vendor\select2\select2.css" />
+    <Content Include="App_Plugins\FontAwesomeIconPicker\vendor\select2\select2.min.js" />
+    <Content Include="App_Plugins\FontAwesomeIconPicker\vendor\select2\select2.png" />
+    <Content Include="App_Plugins\FontAwesomeIconPicker\vendor\select2\select2x2.png" />
+    <Content Include="App_Plugins\Webtools3\backoffice\Webtools3Tree\l10nCfgStatus.html" />
+    <Content Include="App_Plugins\Webtools3\backoffice\Webtools3Tree\l10nLangStatus.html" />
+    <Content Include="App_Plugins\Webtools3\backoffice\Webtools3Tree\l10nStatus.html" />
+    <Content Include="App_Plugins\Webtools3\vendor\jquery.signalR-2.0.3.js" />
+    <Content Include="App_Plugins\Webtools3\backoffice\Webtools3Tree\debugLog.html" />
+    <Content Include="App_Plugins\Webtools3\backoffice\Webtools3Tree\installHistory.html" />
+    <Content Include="App_Plugins\Webtools3\backoffice\Webtools3Tree\install.html" />
+    <Content Include="App_Plugins\Webtools3\backoffice\Webtools3Tree\debug.html" />
+    <Content Include="App_Plugins\Webtools3\backoffice\Webtools3Tree\createNewVersion.html" />
+    <Content Include="App_Plugins\Webtools3\backoffice\Webtools3Tree\updatePreviewDialog.html" />
+    <Content Include="App_Plugins\Webtools3\backoffice\Webtools3Tree\updateHistory.html" />
+    <Content Include="App_Plugins\Webtools3\backoffice\Webtools3Tree\update.html" />
+    <Content Include="App_Plugins\Webtools3\Webtools3.Install.Controller.js" />
+    <Content Include="App_Plugins\Webtools3\Webtools3.Debug.Controller.js" />
+    <Content Include="App_Plugins\Webtools3\Webtools3.CreateNewVersion.Controller.js" />
+    <Content Include="App_Plugins\Webtools3\Webtools3.Debug.Log.Controller.js" />
+    <Content Include="App_Plugins\Webtools3\Webtools3.Install.History.Controller.js" />
+    <Content Include="App_Plugins\Webtools3\Webtools3.L10nStatus.Controller.js" />
+    <Content Include="App_Plugins\Webtools3\Webtools3.L10nStatus.Lang.Controller.js" />
+    <Content Include="App_Plugins\Webtools3\Webtools3.Update.Controller.js" />
+    <Content Include="App_Plugins\Webtools3\Webtools3.Resource.js" />
+    <Content Include="Content\AdminOld\admin.css" />
+    <Content Include="Content\AdminOld\bootstrap-responsive.css" />
+    <Content Include="Content\AdminOld\bootstrap.css" />
+    <Content Include="Content\AdminOld\bootstrap3.css" />
+    <Content Include="Content\AdminOld\bootstrap2.css" />
+    <Content Include="Content\AdminOld\bootswatch.css" />
+    <Content Include="Content\AdminOld\datepicker.css" />
+    <Content Include="Content\AdminOld\font-awesome.min.css" />
+    <Content Include="Content\AdminOld\MasterBootstrap.css">
+      <DependentUpon>MasterBootstrap.css.bundle</DependentUpon>
+    </Content>
+    <Content Include="Content\AdminOld\MasterBootstrap.min.css">
+      <DependentUpon>MasterBootstrap.css.bundle</DependentUpon>
+    </Content>
+    <Content Include="Content\base.css" />
+    <Content Include="Content\createdatabase.css" />
+    <Content Include="Content\fields.css" />
+    <Content Include="Content\Fonts\fontawesome-webfont.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\weathericons-regular-webfont.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\formslist.css" />
+    <Content Include="Content\layout.css" />
+    <Content Include="Content\Sites\dummy.txt" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bg\consumption_bar_striped.gif" />
+    <Content Include="Images\bg\consumption_bar_striped.png" />
+    <Content Include="Images\bg\consumption_smiley_happy.png" />
+    <Content Include="Images\bg\consumption_smiley_neutral.png" />
+    <Content Include="Images\bg\consumption_smiley_sad.png" />
+    <Content Include="Images\bg\ecolabel_arrow-mobile.png" />
+    <Content Include="Images\bg\ecolabel_arrow.png" />
+    <Content Include="Images\bg\ecolabel_arrow_a.png" />
+    <Content Include="Images\bg\ecolabel_arrow_purple.png" />
+    <Content Include="Images\bg\ecolabel_center_purple.png" />
+    <Content Include="Images\bg\ecolabel_happy01.png" />
+    <Content Include="Images\bg\ecolabel_happy02.png" />
+    <Content Include="Images\bg\ecolabel_happy03.png" />
+    <Content Include="Images\bg\ecolabel_neutral01.png" />
+    <Content Include="Images\bg\ecolabel_neutral02.png" />
+    <Content Include="Images\bg\ecolabel_neutral03.png" />
+    <Content Include="Images\bg\ecolabel_sad01.png" />
+    <Content Include="Images\bg\ecolabel_sad02.png" />
+    <Content Include="Images\bg\ecolabel_sad03.png" />
+    <Content Include="Images\bg\ecolabel_semihappy01.png" />
+    <Content Include="Images\bg\ecolabel_semihappy02.png" />
+    <Content Include="Images\bg\ecolabel_semihappy03.png" />
+    <Content Include="Images\bg\ecolabel_semisad01.png" />
+    <Content Include="Images\bg\ecolabel_semisad02.png" />
+    <Content Include="Images\bg\ecolabel_semisad03.png" />
+    <Content Include="Images\bg\nemid01.png" />
+    <Content Include="Images\bg\smiley112.png" />
+    <Content Include="Images\bg\smiley28.png" />
+    <Content Include="Images\bg\smiley56.png" />
+    <Content Include="Images\bg\smileysad112.png" />
+    <Content Include="Images\bg\smileysad28.png" />
+    <Content Include="Images\bg\smileysad56.png" />
+    <Content Include="Images\bg\speedometer01.png" />
+    <Content Include="Images\bg\speedometer02.png" />
+    <Content Include="Images\bg\speedometer_mobile01.png" />
+    <Content Include="Images\bg\speedometer_mobile02.png" />
+    <Content Include="Images\bg\speedometer_plain01.png" />
+    <Content Include="Images\bg\speedometer_plain02.png" />
+    <Content Include="Images\bg\speedometer_plain_reversed01.png" />
+    <Content Include="Images\bg\speedometer_plain_reversed02.png" />
+    <Content Include="Images\bg\speedometer_plain_reversed03.png" />
+    <Content Include="Images\bg_req.png" />
+    <Content Include="Images\bg_req_red.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\content\diehl-logo.png" />
+    <Content Include="Images\error_icon.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\icons\Dark\cooling.png" />
+    <Content Include="Images\icons\Dark\district_heating.png" />
+    <Content Include="Images\icons\Dark\electricity.png" />
+    <Content Include="Images\icons\Dark\gas.png" />
+    <Content Include="Images\icons\Dark\oil_water.png" />
+    <Content Include="Images\icons\Dark\unknown_type.png" />
+    <Content Include="Images\icons\Dark\wastebin.png" />
+    <Content Include="Images\icons\itemMeasureType-electricity.gif" />
+    <Content Include="Images\icons\itemMeasureType-gas.gif" />
+    <Content Include="Images\icons\itemMeasureType-heating.gif" />
+    <Content Include="Images\icons\itemMeasureType-water.gif" />
+    <Content Include="Images\icons\Light\cooling.png" />
+    <Content Include="Images\icons\Light\district_heating.png" />
+    <Content Include="Images\icons\Light\electricity.png" />
+    <Content Include="Images\icons\Light\gas.png" />
+    <Content Include="Images\icons\Light\oil_water.png" />
+    <Content Include="Images\icons\Light\unknown_type.png" />
+    <Content Include="Images\icons\Light\wastebin.png" />
+    <Content Include="Images\icons\White\cooling.png" />
+    <Content Include="Images\icons\White\district_heating.png" />
+    <Content Include="Images\icons\White\electricity.png" />
+    <Content Include="Images\icons\White\gas.png" />
+    <Content Include="Images\icons\White\oil_water.png" />
+    <Content Include="Images\icons\White\unknown_type.png" />
+    <Content Include="Images\icons\White\wastebin.png" />
+    <Content Include="Images\ie\ie-white-65.png" />
+    <Content Include="Images\ie\speedometer-a-mobile.png" />
+    <Content Include="Images\ie\speedometer-a.png" />
+    <Content Include="Images\ie\speedometer-b-mobile.png" />
+    <Content Include="Images\ie\speedometer-b.png" />
+    <Content Include="Images\ie\speedometer-c-mobile.png" />
+    <Content Include="Images\ie\speedometer-c.png" />
+    <Content Include="Images\ie\speedometer-d-mobile.png" />
+    <Content Include="Images\ie\speedometer-d.png" />
+    <Content Include="Images\ie\speedometer-e-mobile.png" />
+    <Content Include="Images\ie\speedometer-e.png" />
+    <Content Include="Images\ie\speedometer-f-mobile.png" />
+    <Content Include="Images\ie\speedometer-f.png" />
+    <Content Include="Images\ie\speedometer-g-mobile.png" />
+    <Content Include="Images\ie\speedometer-g.png" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\logo_black_bg.png" />
+    <Content Include="Images\map\marker-icon-blue-2x.png" />
+    <Content Include="Images\map\marker-icon-red-2x.png" />
+    <Content Include="Images\map\marker-icon-red.png" />
+    <Content Include="Images\map\marker-icon-yellow-2x.png" />
+    <Content Include="Images\map\marker-icon-yellow.png" />
+    <Content Include="Images\map\marker-icon-green-2x.png" />
+    <Content Include="Images\map\marker-icon-green.png" />
+    <Content Include="Images\map\marker-icon-gray-2x.png" />
+    <Content Include="Images\map\marker-icon-gray.png" />
+    <Content Include="Images\map\marker-icon-blue.png" />
+    <Content Include="Images\map\marker-shadow.png" />
+    <Content Include="Images\map\spinner.gif" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Images\red_dot.png" />
+    <Content Include="Images\search-icon.png" />
+    <Content Include="Images\showloading.gif" />
+    <Content Include="Images\slides\benchmark\chart-arrow.png" />
+    <Content Include="Images\slides\benchmark\chart.png" />
+    <Content Include="Images\slides\benchmark\smiley-a.png" />
+    <Content Include="Images\slides\benchmark\smiley-b.png" />
+    <Content Include="Images\slides\benchmark\smiley-c.png" />
+    <Content Include="Images\slides\benchmark\smiley-d.png" />
+    <Content Include="Images\slides\benchmark\smiley-e.png" />
+    <Content Include="Images\slides\benchmark\smiley-f.png" />
+    <Content Include="Images\slides\benchmark\smiley-g.png" />
+    <Content Include="media\1001\diehl-logo.png" />
+    <Content Include="Scripts\Admin\Services\dialogService.js" />
+    <Content Include="Scripts\Admin\Services\Miscellaneous\wt2CustomDataService.js" />
+    <Content Include="Scripts\Admin\Services\Notification\wt2MigrationService.js" />
+    <Content Include="Scripts\Admin\Services\Text\textImportService.js" />
+    <Content Include="Scripts\Admin\Services\Update\updateService.js" />
+    <Content Include="Scripts\Admin\webtools3AdminApp.js" />
+    <Content Include="Scripts\Admin\Services\Config\configDatabaseService.js" />
+    <Content Include="Scripts\Modals\webtools.modals.js" />
+    <Content Include="Scripts\Sites\Diehl\Haderslev\haderslev_webtools.widgets.consumption_flot.min.js">
+      <DependentUpon>haderslev_webtools.widgets.consumption_flot.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Sites\webtools.all.haderslev.js" />
+    <Content Include="Scripts\Sites\webtools.all.js" />
+    <Content Include="Scripts\Sites\webtools.common.js" />
+    <Content Include="Scripts\Sites\webtools.common.min.js" />
+    <Content Include="Scripts\Slides\webtools.slides.benchmark.js" />
+    <Content Include="Scripts\Slides\webtools.slides.recycleGraphTable.js" />
+    <Content Include="Scripts\Slides\webtools.slides.consumption.js" />
+    <Content Include="Scripts\Slides\webtools.slides.map.js" />
+    <Content Include="Scripts\Vendor\angular-1.4.0.min.js" />
+    <Content Include="Scripts\Vendor\headroom.js" />
+    <Content Include="Scripts\Vendor\jquery.flot\jquery.flot.orderBars.custom.js" />
+    <Content Include="Scripts\Vendor\jQuery\jquery-1.11.1.js" />
+    <Content Include="Scripts\Vendor\jQuery\jquery-2.1.3.min.js" />
+    <Content Include="Scripts\Vendor\jQuery\jquery.numberformatter-1.2.4.js" />
+    <Content Include="Scripts\Vendor\jQuery\jquery.signalR-2.0.3.js" />
+    <Content Include="Scripts\Vendor\jQuery\jquery.signalR-2.2.0.js" />
+    <Content Include="Scripts\Vendor\jQuery\jquery.signalR-2.2.0.min.js" />
+    <Content Include="Scripts\Vendor\jQuery\signalRHubs.js" />
+    <Content Include="Scripts\Vendor\jshashtable-3.0.js" />
+    <Content Include="Scripts\Vendor\leaflet.js" />
+    <Content Include="Scripts\Vendor\spin.js" />
+    <Content Include="Scripts\webtools.jquery.post.js" />
+    <Content Include="Scripts\webtools.jquery.pre.js" />
+    <Content Include="Scripts\webtools.knockout.bindings.js" />
+    <Content Include="Scripts\webtools.knockout.extensions.js" />
+    <Content Include="Scripts\Sites\Diehl\Haderslev\haderslev_webtools.widgets.consumption_flot.js" />
+    <Content Include="Scripts\Slides\webtools.slides.compareKeyfigure.js" />
+    <Content Include="Scripts\Slides\webtools.slides.js" />
+    <Content Include="Scripts\Slides\webtools.slides.text.js" />
+    <Content Include="Scripts\Slides\webtools.slides.usageRightNow.js" />
+    <Content Include="Scripts\Slides\webtools.slides.weather.js" />
+    <Content Include="Scripts\Vendor\analytics.js" />
+    <Content Include="Scripts\Vendor\es5-shim_js.js" />
+    <Content Include="Scripts\Vendor\excanvas.min.js" />
+    <Content Include="Scripts\Vendor\jQuery\jquery.blockUI.js" />
+    <Content Include="Scripts\Vendor\jQuery\jquery.cookie.js" />
+    <Content Include="Scripts\Vendor\jquery.flot\jquery.flot - Copy.js" />
+    <Content Include="Scripts\Vendor\jquery.flot\jquery.flot.dashes.js" />
+    <Content Include="Scripts\Vendor\jquery.flot\jquery.flot.tickSymbol.js" />
+    <Content Include="Scripts\Vendor\jquery.flot\jquery.flot.valuelabels.js" />
+    <Content Include="Scripts\Vendor\jquery.flot\excanvas.js" />
+    <Content Include="Scripts\Vendor\jquery.flot\jquery.colorhelpers.js" />
+    <Content Include="Scripts\Vendor\jquery.flot\jquery.flot.canvas.js" />
+    <Content Include="Scripts\Vendor\jquery.flot\jquery.flot.categories.js" />
+    <Content Include="Scripts\Vendor\jquery.flot\jquery.flot.crosshair.js" />
+    <Content Include="Scripts\Vendor\jquery.flot\jquery.flot.errorbars.js" />
+    <Content Include="Scripts\Vendor\jquery.flot\jquery.flot.fillbetween.js" />
+    <Content Include="Scripts\Vendor\jquery.flot\jquery.flot.image.js" />
+    <Content Include="Scripts\Vendor\jquery.flot\jquery.flot.js" />
+    <Content Include="Scripts\Vendor\jquery.flot\jquery.flot.navigate.js" />
+    <Content Include="Scripts\Vendor\jquery.flot\jquery.flot.pie.js" />
+    <Content Include="Scripts\Vendor\jquery.flot\jquery.flot.resize.js" />
+    <Content Include="Scripts\Vendor\jquery.flot\jquery.flot.selection.js" />
+    <Content Include="Scripts\Vendor\jquery.flot\jquery.flot.stack.js" />
+    <Content Include="Scripts\Vendor\jquery.flot\jquery.flot.symbol.js" />
+    <Content Include="Scripts\Vendor\jquery.flot\jquery.flot.threshold.js" />
+    <Content Include="Scripts\Vendor\jquery.flot\jquery.flot.time.js" />
+    <Content Include="Scripts\Vendor\jquery.flot\jquery.js" />
+    <Content Include="Scripts\Vendor\jQuery\jQuery.headroom.js" />
+    <Content Include="Scripts\Vendor\knockout-2.1.0.js" />
+    <Content Include="Scripts\Vendor\knockout.mapping-2.3.3.js" />
+    <Content Include="Scripts\Vendor\less-1.4.1.min.js" />
+    <Content Include="Scripts\Vendor\postal.js" />
+    <Content Include="Scripts\Vendor\postal.min.js" />
+    <Content Include="Scripts\Vendor\jQuery\responsive-calendar.js" />
+    <Content Include="Scripts\Vendor\underscore-1.4.2.js" />
+    <Content Include="Scripts\webtools.broker.js" />
+    <Content Include="Scripts\webtools.constants.js" />
+    <Content Include="Scripts\webtools.events.js" />
+    <Content Include="Scripts\webtools.html.js" />
+    <Content Include="Scripts\webtools.js" />
+    <Content Include="Scripts\webtools.login.js" />
+    <Content Include="Scripts\webtools.obj.js" />
+    <Content Include="Scripts\webtools.page.js" />
+    <Content Include="Scripts\webtools.services.js" />
+    <Content Include="Scripts\webtools.state.js" />
+    <Content Include="Scripts\webtools.map.js" />
+    <Content Include="Scripts\webtools.tools.consumption.js" />
+    <Content Include="Scripts\webtools.tools.dates.js" />
+    <Content Include="Scripts\webtools.tools.js" />
+    <Content Include="Scripts\webtools.login.nemid.js" />
+    <Content Include="Scripts\webtools.tools.numbers.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.annualreadings.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.invoices.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.slides.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.hourconsumption.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.wasteConfiguration.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.wastePlan.js" />
+    <Content Include="Scripts\webtools.xdate.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.alarms.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.benchmark.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.consumption.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.consumption_flot.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.economy.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.login.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.logout.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.overview.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.overviewDistrictHeating.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.reports.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.submenu.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.languagepicker.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.userinfo.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.userprofile.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.users.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.masterdata.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets_base.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets_itemchooser.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets_text.js" />
+    <Content Include="Scripts\Widgets\webtools.widgets.logbook.js" />
+    <Content Include="Views\EmailConfigurationReport\Customers\EnergiFyn\Images\happysmiley.gif" />
+    <Content Include="Views\EmailConfigurationReport\Customers\EnergiFyn\Images\img2.gif" />
+    <Content Include="Views\EmailConfigurationReport\Customers\EnergiFyn\Images\img5.gif" />
+    <Content Include="Views\EmailConfigurationReport\Customers\EnergiFyn\Images\logo.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\EnergiFyn\Images\neutralsmiley.gif" />
+    <Content Include="Views\EmailConfigurationReport\Customers\EnergiFyn\Images\sadsmiley.gif" />
+    <Content Include="Views\EmailConfigurationReport\Customers\EnergiFyn\Items\keyfigures.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\EnergiFyn\Items\benchmark.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\EnergiFyn\Items\chart.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\FjernvarmeFyn\Images\happysmiley.gif" />
+    <Content Include="Views\EmailConfigurationReport\Customers\FjernvarmeFyn\Images\img2.gif" />
+    <Content Include="Views\EmailConfigurationReport\Customers\FjernvarmeFyn\Images\img5.gif" />
+    <Content Include="Views\EmailConfigurationReport\Customers\FjernvarmeFyn\Images\logo.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\FjernvarmeFyn\Images\neutralsmiley.gif" />
+    <Content Include="Views\EmailConfigurationReport\Customers\FjernvarmeFyn\Images\sadsmiley.gif" />
+    <Content Include="Views\EmailConfigurationReport\Customers\FjernvarmeFyn\Items\keyfigures.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\FjernvarmeFyn\fjvfyn_alarm_email.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\FjernvarmeFyn\fjvfyn_report_sms.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\FjernvarmeFyn\fjvfyn_alarm_sms.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\FjernvarmeFyn\Items\badbenchmark.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\FjernvarmeFyn\Items\benchmark.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\FjernvarmeFyn\Items\chart.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\FjernvarmeFyn\Items\lastyearchart.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\FjernvarmeFyn\Items\lastyear.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\NRGi\Images\bg-border.gif" />
+    <Content Include="Views\EmailConfigurationReport\Customers\NRGi\Images\bg-bottom.gif" />
+    <Content Include="Views\EmailConfigurationReport\Customers\NRGi\Images\bg-top.gif" />
+    <Content Include="Views\EmailConfigurationReport\Customers\NRGi\Images\logo.gif" />
+    <Content Include="Views\EmailConfigurationReport\Customers\NRGi\Images\logo.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\NRGi\Images\nrgi_benchmark_100.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\NRGi\Images\nrgi_benchmark_200.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\NRGi\Images\nrgi_benchmark_300.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\NRGi\Images\nrgi_benchmark_400.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\NRGi\Images\nrgi_benchmark_500.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\NRGi\Images\nrgi_benchmark_600.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\NRGi\Images\pixel.gif" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\content\templateIntervalRow.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\content\templateYearsCurrent.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\content\templateYearsExpected.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\content\templateYearsHistory.cshtml" />
+    <Content Include="Views\Admin\Notification\WT2MigrationUpdate\Index.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\se_erhvervsrapport_email.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\Images\bullet-1.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\Images\bullet-2.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\Images\bullet-3.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\Images\bullet-4.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\Images\bullet-5.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\Images\bullet-6.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\Images\bullet-7.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\Images\compare\compare0.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\Images\compare\compare1.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\Images\compare\compare10.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\Images\compare\compare11.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\Images\compare\compare12.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\Images\compare\compare13.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\Images\compare\compare14.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\Images\compare\compare15.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\Images\compare\compare16.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\Images\compare\compare17.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\Images\compare\compare18.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\Images\compare\compare2.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\Images\compare\compare3.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\Images\compare\compare4.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\Images\compare\compare5.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\Images\compare\compare6.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\Images\compare\compare7.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\Images\compare\compare8.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\Images\compare\compare9.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\Images\img-1.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\Images\img-3.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\Images\img-7.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\Images\img-8.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Erhvervsrapport\Images\logo.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Images\facebook.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Images\linkedin.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Images\logo.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Images\twitter.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Images\youtube.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SK\Images\skforsyning-logo.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SK\Images\sk_elsalg_energialarm_footer.jpg" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SK\Images\sk_elsalg_energialarm_header.jpg" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SK\Images\sk_energisalg-logo.png" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SK\Images\sk_forsyning_energialarm_footer.jpg" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SK\Images\sk_forsyning_energialarm_header.jpg" />
+    <Content Include="Views\MacroPartials\dummy.txt" />
+    <Content Include="Views\Partials\dummy.txt" />
+    <Content Include="Views\Slide\WeatherV2.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\Admin\media\carousel\" />
+    <Folder Include="Content\Admin\media\gallery\thumbs\" />
+    <Folder Include="Content\Less\Sites\" />
+    <Folder Include="Models\Error\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="macroScripts\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\trees.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\applications.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Page.cshtml" />
+    <Content Include="Views\Site.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\DefaultHelpContent.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\ItemChooser.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\TopMenu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Fonts\fontawesome-webfont.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Fonts\fontawesome-webfont.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Fonts\fontawesome-webfont.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Fonts\FontAwesome.otf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Less\company-page.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Less\consumption.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Less\elements.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Less\fonts.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Less\installations.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Less\login.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Less\menu.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Less\itemchooser.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Less\mixins.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Less\monitoring.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Less\overview-ecolabel.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Less\overview-economics.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Less\overview-electricity-water.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Less\overview-graph.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Less\overview-heating.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Less\overview-smiley.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Less\overview.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Less\responsive-calendar.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Less\sections.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Less\userinfo.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Less\userprofile.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Less\variables.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Less\widgets.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Template\Benchmark.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Template\Consumption.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Template\Economy.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Template\Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Template\Logout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Template\Overview.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Template\OverviewDistrictHeating.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Template\Reports.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Template\Submenu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Template\UserInfo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Template\UserProfile.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Template\Users.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\Vendor\postal.min.js.map">
+      <DependentUpon>postal.js</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Widgets\Submenu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Admin\Notification\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Admin\Notification\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Admin\Notification\TestRun.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Admin\Shared\_LayoutAdmin.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Admin\Shared\Notification\NotificationCondition.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Admin\Shared\Notification\NotificationConfiguration.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Admin\Shared\Notification\Notifications.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Admin\Shared\Notification\NotificationsSent.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Admin\Shared\Notification\UserInfo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\log4net.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="config\ClientDependency.config" />
+    <Content Include="App_Plugins\FontAwesomeIconPicker\package.manifest" />
+    <Content Include="App_Plugins\FontAwesomeIconPicker\vendor\fontawesome\fontawesome-webfont.eot" />
+    <Content Include="App_Plugins\FontAwesomeIconPicker\vendor\fontawesome\fontawesome-webfont.ttf" />
+    <Content Include="App_Plugins\FontAwesomeIconPicker\vendor\fontawesome\fontawesome-webfont.woff" />
+    <Content Include="App_Plugins\FontAwesomeIconPicker\vendor\fontawesome\FontAwesome.otf" />
+    <Content Include="App_Plugins\Webtools3\package.manifest" />
+    <Content Include="App_Plugins\Webtools3\Webtools3.L10nStatus.Cfg.Controller.js" />
+    <Content Include="CodeTemplates\AddView\CSHTML\Edit.tt" />
+    <Content Include="CodeTemplates\AddView\CSHTML\Create.tt" />
+    <Content Include="CodeTemplates\AddView\CSHTML\Delete.tt" />
+    <Content Include="CodeTemplates\AddView\CSHTML\List.tt" />
+    <Content Include="config\connections\Sample.config" />
+    <Content Include="App_Data\Webtools3Certificate\KMD AS - WebTools.Cert.TS.p12">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\Webtools3Certificate\KMD AS - WebTools.Cert.INT.p12">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\UrlRewriting.config" />
+    <Content Include="config\umbracoSettings.config" />
+    <Content Include="config\tinyMceConfig.config" />
+    <Content Include="config\scripting.config" />
+    <Content Include="config\metablogConfig.config" />
+    <Content Include="config\FileSystemProviders.config" />
+    <Content Include="config\feedProxy.config" />
+    <Content Include="config\ExamineSettings.config" />
+    <Content Include="config\ExamineIndex.config" />
+    <Content Include="config\EmbeddedMedia.config" />
+    <Content Include="config\Dashboard.config" />
+    <Content Include="config\BaseRestExtensions.config" />
+    <Content Include="config\404handlers.config" />
+    <Content Include="App_Data\Webtools3Config\BackendModel.config" />
+    <Content Include="App_Data\Webtools3Config\connectionStrings.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\Webtools3Config\ContentExportConfigurationModel.config" />
+    <Content Include="App_Data\Webtools3Config\DatabaseModel.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\Webtools3Config\HostnameModel.config" />
+    <Content Include="App_Data\Webtools3Config\InstallationIdModel.config" />
+    <Content Include="App_Data\Webtools3Config\LicenseKeyModel.config" />
+    <Content Include="App_Data\Webtools3Config\LocalInstallationLoginModel.config" />
+    <Content Include="App_Data\Webtools3Config\smtp.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\Webtools3Config\SmtpModel.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="bundleconfig.json" />
+    <Content Include="App_Data\Webtools3Certificate\KMD AS - WebTools.Cert.PB.p12">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\Webtools3Certificate\KMD AS - WebTools.Cert.TA.p12">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Content\AdminOld\MasterBootstrap.css.bundle" />
+    <Content Include="Views\Shared\RenderWidgets.cshtml" />
+    <Content Include="Views\WidgetLogin.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Widget.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\WidgetBenchmark.cshtml" />
+    <Content Include="Views\WidgetConsumption.cshtml" />
+    <Content Include="Views\WidgetEconomy.cshtml" />
+    <Content Include="Views\WidgetOverview.cshtml" />
+    <Content Include="Views\WidgetOverviewDistrictHeating.cshtml" />
+    <Content Include="Views\WidgetReports.cshtml" />
+    <Content Include="Views\WidgetSubmenu.cshtml" />
+    <Content Include="Views\WidgetUserInfo.cshtml" />
+    <Content Include="Views\WidgetUserProfile.cshtml" />
+    <Content Include="Views\WidgetUsers.cshtml" />
+    <Content Include="Views\AlarmsAbsoluteCellDefault.cshtml" />
+    <Content Include="Views\AlarmsAbsolutEmailDefault.cshtml" />
+    <Content Include="Views\AlarmsRelativeEmailDefault.cshtml" />
+    <Content Include="Views\Template\Alarms.cshtml" />
+    <Content Include="Views\ReportsDistrictHeatingReport1Email.cshtml" />
+    <Content Include="Views\Admin\Notification\Sent.cshtml" />
+    <Content Include="Views\Shared\Dropdown.cshtml" />
+    <Content Include="Content\Less\dropdown.less" />
+    <Content Include="Content\Less\company-pageslideshow.less" />
+    <Content Include="Content\Less\slide-weather.less" />
+    <Content Include="Content\Less\slide-weather-v2.less" />
+    <Content Include="Content\Fonts\weathericons-regular-webfont.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\weathericons-regular-webfont.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\weathericons-regular-webfont.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Less\slide-usageRightNow.less" />
+    <Content Include="Content\Less\slide-consumptionComparedWithLastPeriod.less" />
+    <Content Include="Content\Less\slide-compareKeyfigure.less" />
+    <Content Include="Content\Less\cookie.less" />
+    <Content Include="Views\Admin\User\Login.cshtml" />
+    <Content Include="Views\WidgetAlarms.cshtml" />
+    <Content Include="Views\PageConsumption.cshtml" />
+    <Content Include="Views\PageNotification.cshtml" />
+    <Content Include="Views\PageOverview.cshtml" />
+    <Content Include="Views\PageUser.cshtml" />
+    <Content Include="Views\ReportsDistrictHeating.cshtml" />
+    <Content Include="Views\ReportsDistrictHeatingReport1.cshtml" />
+    <Content Include="Views\Template\SentAlarmsAndReports.cshtml" />
+    <Content Include="Views\WidgetSentAlarmsAndReports.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\WidgetNotifications.cshtml" />
+    <Content Include="Views\BrowserNotSupportedPage.cshtml" />
+    <Content Include="Views\PageSlideshow.cshtml" />
+    <Content Include="Views\Slide.cshtml" />
+    <Content Include="Views\SlideWeather.cshtml" />
+    <Content Include="Views\SlideWeatherV2.cshtml" />
+    <Content Include="Views\Shared\_LayoutSlideshow.cshtml" />
+    <Content Include="Views\Shared\RenderSlides.cshtml" />
+    <Content Include="Views\Slide\Weather.cshtml" />
+    <Content Include="Views\SlideUsageRightNow.cshtml" />
+    <Content Include="Views\Slide\UsageRightNow.cshtml" />
+    <Content Include="Views\Shared\Slides\UsageRightNow\Report.cshtml" />
+    <Content Include="Views\SlideConsumptionComparedWithLastPeriod.cshtml" />
+    <Content Include="Views\Slide\ConsumptionComparedWithLastPeriod.cshtml" />
+    <Content Include="Scripts\Slides\webtools.slides.consumptionComparedWithLastPeriod.js" />
+    <Content Include="Views\Slide\CompareKeyfigure.cshtml" />
+    <Content Include="Views\SlideCompareKeyfigure.cshtml" />
+    <Content Include="Views\Error\Index.cshtml" />
+    <Content Include="Views\Error\NotConfigured.cshtml" />
+    <Content Include="Views\Shared\TopMenuSlideshow.cshtml" />
+    <Content Include="Views\Shared\SlideSubtitle.cshtml" />
+    <Content Include="Views\Shared\SlideTitle.cshtml" />
+    <Content Include="Views\Shared\Slides\ConsumptionComparedWithLastPeriod\LastTwoMonthsReport.cshtml" />
+    <Content Include="Views\Shared\Slides\ConsumptionComparedWithLastPeriod\LastDayReport.cshtml" />
+    <Content Include="Views\SlideText.cshtml" />
+    <Content Include="Views\Slide\Text.cshtml" />
+    <Content Include="Scripts\webtools.analytics.js" />
+    <Content Include="Scripts\webtools.text.js" />
+    <Content Include="Views\Template\LanguagePicker.cshtml" />
+    <Content Include="Views\WidgetLanguagePicker.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Notification\Unsubscribe.cshtml" />
+    <Content Include="Views\Shared\_LayoutUnsubscribe.cshtml" />
+    <Content Include="Views\Slide\RecycleGraphTable.cshtml" />
+    <Content Include="Content\Less\slide-recyclegraph.less" />
+    <Content Include="Content\Less\slide-consumption.less" />
+    <Content Include="Content\Less\slide-hourlyConsumption.less" />
+    <Content Include="Content\Less\logbook.less" />
+    <Content Include="Content\Less\slide-benchmark.less" />
+    <Content Include="Content\Less\leaflet.less" />
+    <Content Include="Content\Less\wasteplan.less" />
+    <Content Include="Content\Less\wasteconfiguration.less" />
+    <Content Include="Content\Less\invoicelist.less" />
+    <Content Include="Content\Less\annualreadings.less" />
+    <Content Include="Content\Less\modal.less" />
+    <Content Include="Content\Less\hourintervalchooser.less" />
+    <Content Include="Content\Admin\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Admin\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Admin\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Admin\fonts\FontAwesome.otf" />
+    <Content Include="Content\Less\spinner.less" />
+    <Content Include="Content\Less\icons.less" />
+    <Content Include="Content\Less\textlogbook.less" />
+    <Content Include="Content\Less\consumptionview.less" />
+    <Content Include="Content\Less\consumption-common.less" />
+    <Content Include="Content\Fonts\icofont.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\icofont.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\icofont.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Less\items.less" />
+    <Content Include="Content\Less\itemsContainer.less" />
+    <Content Include="Content\Less\movingform.less" />
+    <Content Include="Content\Less\sections2.less" />
+    <Content Include="Content\Less\guide.less" />
+    <Content Include="Content\Less\form2.less" />
+    <Content Include="Content\Fonts\fontello.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\fontello.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\fontello.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\fontello.woff2">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\titilliumweb-bold-webfont.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\titilliumweb-bold-webfont.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\titilliumweb-bold-webfont.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\titilliumweb-bold-webfont.woff2">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\titilliumweb-italic-webfont.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\titilliumweb-italic-webfont.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\titilliumweb-italic-webfont.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\titilliumweb-italic-webfont.woff2">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\titilliumweb-regular-webfont.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\titilliumweb-regular-webfont.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\titilliumweb-regular-webfont.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\titilliumweb-regular-webfont.woff2">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\titilliumweb-semibold-webfont.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\titilliumweb-semibold-webfont.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\titilliumweb-semibold-webfont.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\titilliumweb-semibold-webfont.woff2">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Less\accordion.less" />
+    <Content Include="Content\Less\page-sidebar.less" />
+    <Content Include="Content\Less\FontAwesome\animated.less" />
+    <Content Include="Content\Less\FontAwesome\bordered-pulled.less" />
+    <Content Include="Content\Less\FontAwesome\core.less" />
+    <Content Include="Content\Less\FontAwesome\fixed-width.less" />
+    <Content Include="Content\Less\FontAwesome\font-awesome.less" />
+    <Content Include="Content\Less\FontAwesome\icons.less" />
+    <Content Include="Content\Less\FontAwesome\larger.less" />
+    <Content Include="Content\Less\FontAwesome\list.less" />
+    <Content Include="Content\Less\FontAwesome\mixins.less" />
+    <Content Include="Content\Less\FontAwesome\path.less" />
+    <Content Include="Content\Less\FontAwesome\rotated-flipped.less" />
+    <Content Include="Content\Less\FontAwesome\screen-reader.less" />
+    <Content Include="Content\Less\FontAwesome\stacked.less" />
+    <Content Include="Content\Less\FontAwesome\variables.less" />
+    <Content Include="Content\Less\userchange.less" />
+    <Content Include="Content\Less\modal-filterEdit.less" />
+    <Content Include="Content\Less\entermail.less" />
+    <Content Include="Content\Fonts\Rubik-Black.ttf" />
+    <Content Include="Content\Fonts\Rubik-BlackItalic.ttf" />
+    <Content Include="Content\Fonts\Rubik-Bold.ttf" />
+    <Content Include="Content\Fonts\Rubik-BoldItalic.ttf" />
+    <Content Include="Content\Fonts\Rubik-Italic.ttf" />
+    <Content Include="Content\Fonts\Rubik-Light.ttf" />
+    <Content Include="Content\Fonts\Rubik-LightItalic.ttf" />
+    <Content Include="Content\Fonts\Rubik-Medium.ttf" />
+    <Content Include="Content\Fonts\Rubik-MediumItalic.ttf" />
+    <Content Include="Content\Fonts\Rubik-Regular.ttf" />
+    <Content Include="Content\Less\slide-benchmarkMultiple.less" />
+    <Content Include="Content\Less\login2.less" />
+    <Content Include="Content\Admin\less\inc\login3.less" />
+    <Content Include="Content\Less\login3.less" />
+    <Content Include="Content\Less\consumptionExportViewx.less" />
+    <Content Include="Content\Less\ekicons.less" />
+    <Content Include="Content\Fonts\ekicons.eot" />
+    <Content Include="Content\Fonts\ekicons.ttf" />
+    <Content Include="Content\Fonts\ekicons.woff" />
+    <Content Include="Content\Fonts\ekicons.woff2" />
+    <Content Include="Content\ekicons.css" />
+    <Content Include="Content\Less\tempMonitor.less" />
+    <None Include="Properties\PublishProfiles\Drift.pubxml" />
+    <Content Include="Views\SlideRecycleGraphTable.cshtml" />
+    <Content Include="Views\Slide\PieGraphAndTable.cshtml" />
+    <Content Include="Views\SlideConsumption.cshtml" />
+    <Content Include="Views\Slide\Consumption.cshtml" />
+    <Content Include="Views\EmailConfiguration.cshtml" />
+    <Content Include="Views\EmailRichTextItem.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Default.cshtml" />
+    <Content Include="Views\Admin\Notification\Render.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Layouts\Default\DefaultItem.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Items\EmailEconomyOverviewItem.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Items\EmailDistrictHeatingOverviewItem.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Items\EmailDefaultOverviewItem.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Items\EmailBenchmarkItem.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Items\EmailConsumptionItem.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Items\EmailRichTextItem.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Shared\Default\DefaultHeadlineRow.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Layouts\Default\DefaultSingleRowItem.cshtml" />
+    <Content Include="Views\WidgetSplitSections.cshtml" />
+    <Content Include="Views\SlideBenchmark.cshtml" />
+    <Content Include="Views\Slide\Benchmark.cshtml" />
+    <Content Include="Views\Template\Logbook.cshtml" />
+    <Content Include="Views\WidgetLogbook.cshtml" />
+    <Content Include="Views\Admin\Workflow\Status\List.cshtml" />
+    <Content Include="Views\Admin\Workflow\Create.cshtml" />
+    <Content Include="Views\Admin\Workflow\List.cshtml" />
+    <Content Include="Views\Admin\Workflow\Delete.cshtml" />
+    <Content Include="Views\Admin\Workflow\Edit.cshtml" />
+    <Content Include="Views\Admin\Workflow\Status\Edit.cshtml" />
+    <Content Include="Views\Admin\Workflow\Status\Create.cshtml" />
+    <Content Include="Views\Admin\Workflow\Status\Delete.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\string.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\int32.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\bool.cshtml" />
+    <Content Include="Views\Admin\Workflow\Items\List.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\password.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\object.cshtml" />
+    <Content Include="Views\Shared\LongAsDateTime.cshtml" />
+    <Content Include="Views\Admin\Shared\Paginate.cshtml" />
+    <Content Include="Views\Admin\Workflow\Items\Delete.cshtml" />
+    <Content Include="Views\Admin\Workflow\Items\Edit.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\guid.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\int64.cshtml" />
+    <Content Include="Views\Admin\Workflow\Items\Status.cshtml" />
+    <Content Include="Views\Admin\Workflow\Items\History.cshtml" />
+    <Content Include="Views\Admin\Shared\ListColumns\statusId.cshtml" />
+    <Content Include="Views\Admin\Shared\ListColumns\LongAsDateTime.cshtml" />
+    <Content Include="Views\Admin\Workflow\Search\Default.cshtml" />
+    <Content Include="Views\Admin\Workflow\Search\WasteConfiguration.cshtml" />
+    <Content Include="Views\Admin\Text\List.cshtml" />
+    <Content Include="Views\Admin\Text\Edit.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\textvalue.cshtml" />
+    <Content Include="Views\Admin\Member\List.cshtml" />
+    <Content Include="Views\Admin\Member\Edit.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\SaveMemberModel.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\SaveMemberGroupModel.cshtml" />
+    <Content Include="Views\Admin\Member\Create.cshtml" />
+    <Content Include="Views\Admin\Member\Delete.cshtml" />
+    <Content Include="Views\AlarmsRelativeCellDefault.cshtml" />
+    <Content Include="Views\Slide\Map.cshtml" />
+    <Content Include="Views\Template\Map.cshtml" />
+    <Content Include="Views\WidgetMap.cshtml" />
+    <Content Include="Views\SlideMap.cshtml" />
+    <Content Include="Views\Template\WastePlan.cshtml" />
+    <Content Include="Views\WidgetWastePlan.cshtml" />
+    <Content Include="Views\WidgetWasteConfiguration.cshtml" />
+    <Content Include="Views\Template\WasteConfiguration.cshtml" />
+    <Content Include="Views\Admin\Workflow\Items\View.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\WT3WorkflowItemWasteConfiguration.cshtml" />
+    <Content Include="Views\Template\NemidLogin.cshtml" />
+    <Content Include="Views\WidgetNemidLogin.cshtml" />
+    <Content Include="Scripts\Widgets\webtools.widgets.nemidLogin.js" />
+    <Content Include="Views\Admin\Config\Index.cshtml" />
+    <Content Include="Views\Admin\Config\Database.cshtml" />
+    <Content Include="Views\Shared\Thumb.cshtml" />
+    <Content Include="Views\Admin\Config\License.cshtml" />
+    <Content Include="Views\Admin\Config\Hostname.cshtml" />
+    <Content Include="Views\Admin\Config\WebsiteWebConfig.cshtml" />
+    <Content Include="Views\Admin\Config\Smtp.cshtml" />
+    <Content Include="Views\Admin\Config\Backend.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Media.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Macro.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Embed.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
+    <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
+    <Content Include="Views\Partials\Grid\Bootstrap2.cshtml" />
+    <Content Include="Views\Admin\Update\Index.cshtml" />
+    <Content Include="Views\Admin\Sites\List.cshtml" />
+    <Content Include="Views\Admin\Sites\Dns.cshtml" />
+    <Content Include="Views\Admin\Jobs\Index.cshtml" />
+    <Content Include="Views\Admin\Content\Index.cshtml" />
+    <Content Include="Views\Shared\UnitChooser.cshtml" />
+    <Content Include="Views\Shared\ConsumptionLegends.cshtml" />
+    <Content Include="Views\Shared\Widgets\LanguagePicker.cshtml" />
+    <Content Include="Views\WidgetSlides.cshtml" />
+    <Content Include="Scripts\Sites\Diehl\Haderslev\haderslev_webtools.widgets.consumption_flot.min.js.map">
+      <DependentUpon>haderslev_webtools.widgets.consumption_flot.min.js</DependentUpon>
+    </Content>
+    <Content Include="Views\Template\Invoices.cshtml" />
+    <Content Include="Views\Template\AnnualReadings.cshtml" />
+    <Content Include="Views\WidgetAnnualReadings.cshtml" />
+    <Content Include="Views\Template\MasterData.cshtml" />
+    <Content Include="Views\AlarmsAbsolutePushDefault.cshtml" />
+    <Content Include="Views\AlarmsRelativePushDefault.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\NRGi\nrgi_default.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\NRGi\Items\MasterData.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\NRGi\Items\SavingTips.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\NRGi\Items\Benchmark.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\NRGi\Items\YearlyConsumption.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\NRGi\Items\Consumption.cshtml" />
+    <Content Include="Views\AlarmsYearlyCustomCellDefault.cshtml" />
+    <Content Include="Views\AlarmsYearlyCustomEmailDefault.cshtml" />
+    <Content Include="Views\AlarmsYearlyCustomPushDefault.cshtml" />
+    <Content Include="Views\AlarmsZeroConsumptionCellDefault.cshtml" />
+    <Content Include="Views\AlarmsZeroConsumptionEmailDefault.cshtml" />
+    <Content Include="Views\AlarmsZeroConsumptionPushDefault.cshtml" />
+    <Content Include="Views\NRGiAlarmsAbsoluteCellDefault.cshtml" />
+    <Content Include="Views\NRGiAlarmsAbsoluteEmailDefault.cshtml" />
+    <Content Include="Views\NRGiAlarmsAbsolutePushDefault.cshtml" />
+    <Content Include="Views\NRGiAlarmsRelativeCellDefault.cshtml" />
+    <Content Include="Views\NRGiAlarmsRelativeEmailDefault.cshtml" />
+    <Content Include="Views\NRGiAlarmsRelativePushDefault.cshtml" />
+    <Content Include="Views\NRGiAlarmsYearlyCustomCellDefault.cshtml" />
+    <Content Include="Views\NRGiAlarmsYearlyCustomEmailDefault.cshtml" />
+    <Content Include="Views\NRGiAlarmsYearlyCustomPushDefault.cshtml" />
+    <Content Include="Views\NRGiAlarmsZeroConsumptionCellDefault.cshtml" />
+    <Content Include="Views\NRGiAlarmsZeroConsumptionEmailDefault.cshtml" />
+    <Content Include="Views\NRGiAlarmsZeroConsumptionPushDefault.cshtml" />
+    <Content Include="Views\Shared\ConsumptionGraphLegends.cshtml" />
+    <Content Include="Views\Template\Emails\User\ForgotPassword\DefaultForgotPasswordEmail.cshtml" />
+    <Content Include="Views\Template\Emails\User\ForgotPassword\DefaultForgotPasswordCell.cshtml" />
+    <Content Include="Views\WidgetMergeSections.cshtml" />
+    <Content Include="Views\Shared\ElementChooser.cshtml" />
+    <Content Include="Scripts\Widgets\webtools.widgets_elementchooser.js" />
+    <Content Include="Scripts\Modals\webtools.modals.budgetEdit.js" />
+    <Content Include="Views\Template\Modals\BudgetEdit.cshtml" />
+    <Content Include="Views\Template\Modals\_Layout.cshtml" />
+    <Content Include="Views\Admin\Text\Import.cshtml" />
+    <Content Include="Views\Admin\Notification\Configurations.cshtml" />
+    <Content Include="Views\Admin\Notification\WT2Migration\Index.cshtml" />
+    <Content Include="Views\Admin\Miscellaneous\Index.cshtml" />
+    <Content Include="Views\Admin\Miscellaneous\WT2DataImport\Index.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\EnergiFyn\energifyn_report_email.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\FjernvarmeFyn\fjvfyn_report_email.cshtml" />
+    <Content Include="Views\Template\HourConsumption.cshtml" />
+    <Content Include="Views\Shared\SlideContent.cshtml" />
+    <Content Include="Views\Template\Modals\HourConsumptionEditIntervals.cshtml" />
+    <Content Include="Views\WidgetHourConsumption.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Items\EmailItemGroup.cshtml" />
+    <Content Include="Views\NotificationTemplates\Mobile\Reports\Default.cshtml" />
+    <Content Include="Views\NotificationTemplates\Email\Alarms\Default.cshtml" />
+    <Content Include="Views\NotificationTemplates\Email\Alarms\Items\DefaultEmailAlarmItem.cshtml" />
+    <Content Include="Views\NotificationTemplates\Email\Alarms\Shared\AlarmsAbsolutEmailDefault.cshtml" />
+    <Content Include="Views\NotificationTemplates\Email\Alarms\Shared\AlarmsRelativeEmailDefault.cshtml" />
+    <Content Include="Views\NotificationTemplates\Email\Alarms\Shared\AlarmsYearlyCustomEmailDefault.cshtml" />
+    <Content Include="Views\NotificationTemplates\Email\Alarms\Shared\AlarmsZeroConsumptionEmailDefault.cshtml" />
+    <Content Include="Views\WidgetWeekConsumption.cshtml" />
+    <Content Include="Views\Template\WeekConsumption.cshtml" />
+    <Content Include="Views\Shared\HourIntervalChooser.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Items\EmailHourConsumptionItem.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\FjernvarmeFyn\Shared\header.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\FjernvarmeFyn\Shared\footer.cshtml" />
+    <Content Include="Views\Shared\_LayoutKMD.cshtml" />
+    <Content Include="Views\KMDPage.cshtml" />
+    <Content Include="Views\KMDPlugin.cshtml" />
+    <Content Include="Views\KMDPluginLogin.cshtml" />
+    <Content Include="Views\Shared\RenderKMDPlugins.cshtml" />
+    <Content Include="Views\KMDPluginBalanceStatement.cshtml" />
+    <Content Include="Views\KMDPluginLogout.cshtml" />
+    <Content Include="Views\KMDPluginProxy.cshtml" />
+    <Content Include="Views\KMDPluginConsumptionOverview.cshtml" />
+    <Content Include="Views\KMDPluginCustomerInfo.cshtml" />
+    <Content Include="Views\KMDPluginMeterInfo.cshtml" />
+    <Content Include="Views\KMDPluginMoving.cshtml" />
+    <Content Include="Views\KMDPluginReportReadings.cshtml" />
+    <Content Include="Views\KMDPluginReportReadingsAgain.cshtml" />
+    <Content Include="Views\KMDPluginReportReadingsReceipt.cshtml" />
+    <Content Include="Views\WidgetInvoices.cshtml" />
+    <Content Include="Views\WidgetMasterData.cshtml" />
+    <Content Include="Views\Admin\Template\LogLive.cshtml" />
+    <Content Include="Views\Admin\Template\LogHistory.cshtml" />
+    <Content Include="Views\Admin\Template\GreenDuelPlayerDetail.cshtml" />
+    <Content Include="Views\Admin\Template\GreenDuelChallenges.cshtml" />
+    <Content Include="Views\Admin\Template\GreenDuelInvitations.cshtml" />
+    <Content Include="Views\Admin\ApiHelp\Api.cshtml" />
+    <Content Include="Views\Admin\ApiHelp\Index.cshtml" />
+    <Content Include="Views\Admin\ApiHelp\ResourceModel.cshtml" />
+    <Content Include="Views\Admin\ApiHelp\_Layout.cshtml" />
+    <Content Include="Views\Admin\ApiHelp\Error.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Views\Admin\Template\SiteContent.cshtml" />
+    <Content Include="Views\Admin\Template\SiteContentSlide.cshtml" />
+    <Content Include="Views\Admin\Template\SiteContentSlideshows.cshtml" />
+    <Content Include="Views\WidgetCompanyData.cshtml" />
+    <Content Include="Views\Template\CompanyData.cshtml" />
+    <Content Include="Views\WidgetTextLogbook.cshtml" />
+    <Content Include="Views\Template\TextLogbook.cshtml" />
+    <Content Include="Views\Template\ConsumptionView.cshtml" />
+    <Content Include="Views\WidgetConsumptionView.cshtml" />
+    <Content Include="Views\Admin\Template\Notifications.cshtml" />
+    <Content Include="Views\Admin\Template\NotificationDetail.cshtml" />
+    <Content Include="Views\Admin\Template\Install.cshtml" />
+    <Content Include="Views\Admin\Jobs\ListHistory.cshtml" />
+    <Content Include="Views\Admin\Jobs\Scheduler.cshtml" />
+    <Content Include="Views\Admin\Jobs\Threads.cshtml" />
+    <Content Include="Views\Admin\Jobs\ListNotificationHistory.cshtml" />
+    <Content Include="Views\Admin\Notification\ErhvervsRapportImport\Index.cshtml" />
+    <Content Include="Views\Admin\Miscellaneous\UserLookup\Index.cshtml" />
+    <Content Include="Scripts\webtools.topmenu.js" />
+    <Content Include="Views\Admin\Miscellaneous\ApplicationState\Index.cshtml" />
+    <Content Include="Views\Admin\Miscellaneous\Token\Index.cshtml" />
+    <None Include="Views\Admin\Template\NotificationList.cshtml" />
+    <Content Include="Views\Template\Items.cshtml" />
+    <Content Include="Views\WidgetItems.cshtml" />
+    <Content Include="Views\WidgetItemsContainer.cshtml" />
+    <Content Include="Views\Template\ItemsContainer.cshtml" />
+    <Content Include="Views\Monitor\Index.cshtml" />
+    <Content Include="Views\Monitor\Login.cshtml" />
+    <Content Include="Views\Shared\MultipleItemChooser.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Css\header.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\se_alarm_email.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\se_week_report_email.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\General\disclaimer.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\se_year_report_email.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\se_alarm_push.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\General\footer.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\se_month_report_email.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SK\sk_alarm_email.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SK\Shared\css.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SK\Shared\footer.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SK\sk_report_email.cshtml" />
+    <Content Include="Views\WidgetEasyMasterData.cshtml" />
+    <Content Include="Views\WidgetEasyMovingForm.cshtml" />
+    <Content Include="Views\PageSidebar.cshtml" />
+    <Content Include="Views\Shared\_LayoutSidebar.cshtml" />
+    <Content Include="Views\Template\ConsumptionViewHofor.cshtml" />
+    <Content Include="Views\WidgetConsumptionViewSidebar.cshtml" />
+    <Content Include="Views\Template\ConsumptionViewSidebar.cshtml" />
+    <Content Include="Views\WidgetConsumptionViewHofor.cshtml" />
+    <Content Include="Views\WidgetExternal.cshtml" />
+    <Content Include="Views\EmailConfigurationReport\Customers\SE\Items\keyfigures.cshtml" />
+    <Content Include="Views\Admin\Template\UserLog.cshtml" />
+    <Content Include="Views\Shared\DropdownOrReadOnly.cshtml" />
+    <Content Include="Views\AlarmsStaticCellDefault.cshtml" />
+    <Content Include="Views\AlarmsStaticEmailDefault.cshtml" />
+    <Content Include="Views\AlarmsStaticPushDefault.cshtml" />
+    <Content Include="Views\NotificationTemplates\Email\Alarms\Shared\AlarmsStaticEmailDefault.cshtml" />
+    <Content Include="Views\Shared\_LayoutEasyStandard.cshtml" />
+    <Content Include="Views\EasyStandardPage.cshtml" />
+    <Content Include="Views\Template\Login2.cshtml" />
+    <Content Include="Views\WidgetLogin2.cshtml" />
+    <Content Include="Views\Template\ChangeUser.cshtml" />
+    <Content Include="Views\Slide\BenchmarkMultiple.cshtml" />
+    <Content Include="Views\SlideBenchmarkMultiple.cshtml" />
+    <Content Include="Views\Template\ResetPassword.cshtml" />
+    <Content Include="Views\WidgetResetPassword.cshtml" />
+    <Content Include="Views\WidgetEnterMail.cshtml" />
+    <Content Include="Views\Template\Entermail.cshtml" />
+    <Content Include="Views\Template\AliasResetPassword.cshtml" />
+    <Content Include="Views\WidgetAliasResetPassword.cshtml" />
+    <Content Include="Views\Template\Emails\User\ForgotPassword\DefaultResetPasswordEmail.cshtml" />
+    <Content Include="Views\Template\Modals\FilterEdit.cshtml" />
+    <Content Include="Views\WidgetChangeUser.cshtml" />
+    <Content Include="Views\WidgetUserPicker.cshtml" />
+    <Content Include="Views\Template\UserPicker.cshtml" />
+    <Content Include="Views\Template\UserAddToken.cshtml" />
+    <Content Include="Views\WidgetUserAddToken.cshtml" />
+    <Content Include="Views\Slide\HourlyConsumption.cshtml" />
+    <Content Include="Views\SlideHourlyConsumption.cshtml" />
+    <Content Include="Views\Slide\Economy.cshtml" />
+    <Content Include="Views\SlideEconomy.cshtml" />
+    <Content Include="Views\Shared\SlideTitlePeriod.cshtml" />
+    <Content Include="Views\WidgetOverviewDistrictHeatingWithoutEconomy.cshtml" />
+    <Content Include="Views\Template\OverviewDistrictHeatingWithoutEconomy.cshtml" />
+    <Content Include="Views\WidgetAddressInfo.cshtml" />
+    <Content Include="Views\Template\AddressInfo.cshtml" />
+    <Content Include="Views\Template\AddressInfoList.cshtml" />
+    <Content Include="Views\WidgetAddressInfoList.cshtml" />
+    <Content Include="Views\Template\BenchmarkHofor.cshtml" />
+    <Content Include="Views\WidgetBenchmarkHofor.cshtml" />
+    <Content Include="Views\WidgetCustomerInformationText.cshtml" />
+    <Content Include="Views\Template\CustomerInformationText.cshtml" />
+    <Content Include="Views\WidgetInvoicesNRGi.cshtml" />
+    <Content Include="Views\Shared\AddressItemChooser.cshtml" />
+    <Content Include="Views\WidgetLogin3.cshtml" />
+    <Content Include="Views\Template\Login3.cshtml" />
+    <Content Include="Views\WidgetConsumptionExportViewx.cshtml" />
+    <Content Include="Views\Template\ConsumptionExportViewx.cshtml" />
+    <Content Include="Views\Template\MasterData2.cshtml" />
+    <Content Include="Views\WidgetMasterData2.cshtml" />
+    <Content Include="Views\WidgetInvoices2.cshtml" />
+    <Content Include="Views\Template\Invoices2.cshtml" />
+    <Content Include="Views\Template\ConsumptionExportView.cshtml" />
+    <Content Include="Views\WidgetConsumptionExportView.cshtml" />
+    <Content Include="Views\WidgetTemperatureMonitor.cshtml" />
+    <Content Include="Views\Template\TemperatureMonitor.cshtml" />
+    <None Include="Web.Develop.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Production.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="xslt\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Thirdparty\ooapi.net\ooapi.net.csproj">
+      <Project>{d25f796e-7b51-4d0a-87f9-587abd6b3f1b}</Project>
+      <Name>ooapi.net</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Webtools3.Api.WTS.KMD.FE\Webtools3.Api.WTS.KMD.FE.csproj">
+      <Project>{375ffc3e-2960-45b7-a426-0263e3527895}</Project>
+      <Name>Webtools3.Api.WTS.KMD.FE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Webtools3.Api.WTS.NRGi\Webtools3.Api.WTS.NRGi.csproj">
+      <Project>{e790c54a-5ba0-43b4-885c-33fb695bcf18}</Project>
+      <Name>Webtools3.Api.WTS.NRGi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Webtools3.Api.WTS\Webtools3.Api.WTS.csproj">
+      <Project>{7da9e258-a1a9-4598-a577-2c95bf923af0}</Project>
+      <Name>Webtools3.Api.WTS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Webtools3.Bootstrapping\Webtools3.Bootstrapping.csproj">
+      <Project>{b6b16e55-6c29-4a46-905b-a256c8821ef3}</Project>
+      <Name>Webtools3.Bootstrapping</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Webtools3.Business.Localization\Webtools3.Business.Localization.csproj">
+      <Project>{5d808c91-05f7-4955-9595-8db33aa3ade4}</Project>
+      <Name>Webtools3.Business.Localization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Webtools3.Business.Logger\Webtools3.Business.Logger.csproj">
+      <Project>{acb3ba4c-e649-4616-a10b-6f217820f5ef}</Project>
+      <Name>Webtools3.Business.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Webtools3.Business.Mediators\Webtools3.Business.Mediators.csproj">
+      <Project>{1dcd1c2b-ccaa-4c45-9279-2b8f8c3b5c98}</Project>
+      <Name>Webtools3.Business.Mediators</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Webtools3.Business.Services.EnergiFyn\Webtools3.Business.Services.EnergiFyn.csproj">
+      <Project>{53572628-417f-4dfa-a105-4dedc19eb215}</Project>
+      <Name>Webtools3.Business.Services.EnergiFyn</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Webtools3.Business.Services.FjvFyn\Webtools3.Business.Services.FjvFyn.csproj">
+      <Project>{017bd1c1-38d2-427f-b5c8-394441ee8142}</Project>
+      <Name>Webtools3.Business.Services.FjvFyn</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Webtools3.Business.Services.Haderslev\Webtools3.Business.Services.Haderslev.csproj">
+      <Project>{0c1ce0ca-05b7-4648-b3d8-488e33522043}</Project>
+      <Name>Webtools3.Business.Services.Haderslev</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Webtools3.Business.Services.HOFOR\Webtools3.Business.Services.HOFOR.csproj">
+      <Project>{40fabc97-3d19-4e75-91fe-f3329ec7fe86}</Project>
+      <Name>Webtools3.Business.Services.HOFOR</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Webtools3.Business.Services.Interfaces\Webtools3.Business.Services.Interfaces.csproj">
+      <Project>{d12e2b12-d39b-4bd7-91ca-8fd216e818f1}</Project>
+      <Name>Webtools3.Business.Services.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Webtools3.Business.Services.KMD.FE\Webtools3.Business.Services.KMD.FE.csproj">
+      <Project>{adf2c644-1477-41b7-92c6-838d544ad717}</Project>
+      <Name>Webtools3.Business.Services.KMD.FE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Webtools3.Business.Services.LEF\Webtools3.Business.Services.LEF.csproj">
+      <Project>{cc103757-6004-4343-9639-97e7f790217f}</Project>
+      <Name>Webtools3.Business.Services.LEF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Webtools3.Business.Services.NRGi\Webtools3.Business.Services.NRGi.csproj">
+      <Project>{8ba09c2d-28f0-407e-8f7f-0fa77d36c0a4}</Project>
+      <Name>Webtools3.Business.Services.NRGi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Webtools3.Business.Services.SE\Webtools3.Business.Services.SE.csproj">
+      <Project>{8b8489a1-94f7-4859-a9a1-ef10f71e6b14}</Project>
+      <Name>Webtools3.Business.Services.SE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Webtools3.Business.Services.Simplex\Webtools3.Business.Services.Simplex.csproj">
+      <Project>{e0eb769a-3e07-496f-bb43-be1f59075091}</Project>
+      <Name>Webtools3.Business.Services.Simplex</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Webtools3.Business.Services.SK\Webtools3.Business.Services.SK.csproj">
+      <Project>{7927585b-dedf-4154-b2d0-808b2e1b0a97}</Project>
+      <Name>Webtools3.Business.Services.SK</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Webtools3.Business.Services.XmlBasis\Webtools3.Business.Services.XmlBasis.csproj">
+      <Project>{ecd7073d-d0ec-4d70-b009-a86e13aa3cae}</Project>
+      <Name>Webtools3.Business.Services.XmlBasis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Webtools3.Business.Services\Webtools3.Business.Services.csproj">
+      <Project>{7aab8837-968f-4e2b-ad8b-d92a056df71c}</Project>
+      <Name>Webtools3.Business.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Webtools3.Business\Webtools3.Business.csproj">
+      <Project>{afac19df-397f-4859-aa89-d329843ecf11}</Project>
+      <Name>Webtools3.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Webtools3.Common\Webtools3.Common.csproj">
+      <Project>{22204dac-ff38-4a65-9add-c751f917d291}</Project>
+      <Name>Webtools3.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Webtools3.Configuration\Webtools3.Configuration.csproj">
+      <Project>{7d7bf35a-8bab-40b5-b66b-b94cc83e351d}</Project>
+      <Name>Webtools3.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Webtools3.Model.KMD.FE\Webtools3.Model.KMD.FE.csproj">
+      <Project>{05424fb3-0264-4162-8441-94599927c26a}</Project>
+      <Name>Webtools3.Model.KMD.FE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Webtools3.Model.NRGi\Webtools3.Model.NRGi.csproj">
+      <Project>{28d0231a-fc28-4911-888e-d48088e1a69a}</Project>
+      <Name>Webtools3.Model.NRGi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Webtools3.Model.SK\Webtools3.Model.SK.csproj">
+      <Project>{c79a8943-cda2-4a04-a455-0f64923517f4}</Project>
+      <Name>Webtools3.Model.SK</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Webtools3.Model\Webtools3.Model.csproj">
+      <Project>{9b10138b-5759-4b8f-9233-95fcadcee3be}</Project>
+      <Name>Webtools3.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Webtools3.Notifications.JobServer\Webtools3.Notifications.JobServer.csproj">
+      <Project>{15ce936d-f9e9-40a0-bd39-26b247e9f289}</Project>
+      <Name>Webtools3.Notifications.JobServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Webtools3.Storage.NRGi\Webtools3.Storage.NRGi.csproj">
+      <Project>{0e76f6c0-78ac-48b8-a05f-54363560fd00}</Project>
+      <Name>Webtools3.Storage.NRGi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Webtools3.Storage\Webtools3.Storage.csproj">
+      <Project>{bd17a202-6d1c-4182-bddb-56451888a555}</Project>
+      <Name>Webtools3.Storage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Webtools3.Umbraco\Webtools3.Umbraco.csproj">
+      <Project>{a03d4630-c742-4d68-8d00-0c1e2eb255e1}</Project>
+      <Name>Webtools3.Umbraco</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Production|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Develop|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51181</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/webtools3</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <TCInvokeSandcastle>false</TCInvokeSandcastle>
+    <TCTriggerMsi1>false</TCTriggerMsi1>
+    <TCTriggerMsi2>false</TCTriggerMsi2>
+    <TCMsiProjectSuffix1>.Setup</TCMsiProjectSuffix1>
+    <TCMsiProjectSuffix2>.Setup32</TCMsiProjectSuffix2>
+    <TCMsiProjectFileExtension>vdproj</TCMsiProjectFileExtension>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Target Name="PackageAll">
+    <MSBuild Projects="$(MSBuildProjectFile)" Targets="Package" Properties="Configuration=Release;AutoParameterizationWebConfigConnectionStrings=false" />
+    <MSBuild Projects="$(MSBuildProjectFile)" Targets="Package" Properties="Configuration=Production;AutoParameterizationWebConfigConnectionStrings=false" />
+  </Target>
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <Target Name="CustomCollectFiles">
+    <ItemGroup>
+      <_BinFiles Include="bin\**\*" />
+      <FilesForPackagingFromProject Include="%(_BinFiles.Identity)">
+        <DestinationRelativePath>bin\%(RecursiveDir)%(Filename)%(Extension)</DestinationRelativePath>
+      </FilesForPackagingFromProject>
+    </ItemGroup>
+  </Target>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <CopyAllFilesToSingleFolderForPackageDependsOn>
+    CustomCollectFiles;
+    $(CopyAllFilesToSingleFolderForPackageDependsOn);
+  </CopyAllFilesToSingleFolderForPackageDependsOn>
+  </PropertyGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\UmbracoCms.7.2.4\build\UmbracoCms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.7.2.4\build\UmbracoCms.props'))" />
+    <Error Condition="!Exists('..\packages\UmbracoCms.7.2.4\build\UmbracoCms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.7.2.4\build\UmbracoCms.targets'))" />
+  </Target>
+  <Import Project="..\packages\UmbracoCms.7.2.4\build\UmbracoCms.targets" Condition="Exists('..\packages\UmbracoCms.7.2.4\build\UmbracoCms.targets')" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+</Project>

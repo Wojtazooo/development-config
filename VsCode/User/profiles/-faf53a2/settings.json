@@ -1,0 +1,61 @@
+{
+  // Backend profile
+  // Window appearance
+  "window.title": "${activeRepositoryName} - ${profileName} profile",
+  "workbench.colorCustomizations": {
+    // Background colors
+    "titleBar.activeBackground": "#655bf0",
+    "titleBar.inactiveBackground": "#655bf0",
+    "activityBar.background": "#655bf0",
+    "statusBar.background": "#655bf0",
+    // Borders
+    "titleBar.border": "#655bf0",
+    "statusBar.border": "#655bf0",
+    // Foreground colors
+    "statusBar.foreground": "#ffffff",
+    "titleBar.activeForeground": "#ffffff",
+    "titleBar.inactiveForeground": "#ffffff",
+    "activityBar.foreground": "#ffffff",
+    "activityBar.inactiveForeground": "#ffffff"
+  },
+  "workbench.editor.showTabs": "single",
+  "workbench.statusBar.visible": false,
+  "files.autoSave": "afterDelay",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.formatOnSave": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "explorer.confirmDelete": false,
+  "editor.formatOnPaste": true,
+  "files.autoSaveDelay": 10000,
+  "workbench.activityBar.location": "top",
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "workbench.layoutControl.enabled": false,
+  "workbench.editor.tabSizingFixedMinWidth": 100,
+  "terminal.integrated.fontSize": 12,
+  "editor.mouseWheelZoom": true,
+  "workbench.list.mouseWheelScrollSensitivity": 3,
+  "git.confirmSync": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.minimap.enabled": false,
+  "window.commandCenter": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "debug.console.fontSize": 12,
+  "csharp.debug.console": "integratedTerminal",
+  // VS solution extension settings
+  "vssolution.lineEndings": "crlf",
+  "vssolution.openProjectOnClick": true,
+  "vssolution.trackActiveItem": true,
+  "workbench.iconTheme": "vscode-icons",
+  "vssolution.showMode": "explorer",
+  "[csharp]": {
+    "editor.defaultFormatter": "ms-dotnettools.csharp"
+  },
+  "dotnet.formatting.organizeImportsOnFormat": true,
+  "debug.terminal.clearBeforeReusing": true,
+  "testing.alwaysRevealTestOnStateChange": true,
+  "testing.automaticallyOpenPeekView": "failureAnywhere",
+  "workbench.sideBar.location": "right",
+  "github.copilot.nextEditSuggestions.enabled": true,
+}
